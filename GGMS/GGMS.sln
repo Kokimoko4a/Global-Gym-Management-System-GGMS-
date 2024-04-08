@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34707.107
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GGMS", "GGMS.csproj", "{FF1BD4E4-6A21-4257-AB7D-1B7DF79F5A3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GGMS.Common", "..\GGMS.Common\GGMS.Common.csproj", "{0F173477-5859-46EB-A4C0-21353A84384B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{3A99E2D1-4E67-47BE-8841-A690485DEA69}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{298EA715-55E4-4656-9D2A-E757BC3946A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GGMS.Data", "..\GGMS.Data\GGMS.Data.csproj", "{BA57782F-85A4-4A32-8654-AD7523B41387}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GGMS.Data.Models", "..\GGMS.Data.Models\GGMS.Data.Models.csproj", "{3A28E179-87D9-464D-BE03-C32BE654B457}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GGMS.Web.ViewModels", "..\GGMS.Web.ViewModels\GGMS.Web.ViewModels.csproj", "{42270A4C-B177-4C96-9DDE-0D9686130908}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF1BD4E4-6A21-4257-AB7D-1B7DF79F5A3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF1BD4E4-6A21-4257-AB7D-1B7DF79F5A3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF1BD4E4-6A21-4257-AB7D-1B7DF79F5A3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF1BD4E4-6A21-4257-AB7D-1B7DF79F5A3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F173477-5859-46EB-A4C0-21353A84384B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F173477-5859-46EB-A4C0-21353A84384B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F173477-5859-46EB-A4C0-21353A84384B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F173477-5859-46EB-A4C0-21353A84384B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA57782F-85A4-4A32-8654-AD7523B41387}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA57782F-85A4-4A32-8654-AD7523B41387}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA57782F-85A4-4A32-8654-AD7523B41387}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA57782F-85A4-4A32-8654-AD7523B41387}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A28E179-87D9-464D-BE03-C32BE654B457}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A28E179-87D9-464D-BE03-C32BE654B457}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A28E179-87D9-464D-BE03-C32BE654B457}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A28E179-87D9-464D-BE03-C32BE654B457}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42270A4C-B177-4C96-9DDE-0D9686130908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42270A4C-B177-4C96-9DDE-0D9686130908}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42270A4C-B177-4C96-9DDE-0D9686130908}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42270A4C-B177-4C96-9DDE-0D9686130908}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FF1BD4E4-6A21-4257-AB7D-1B7DF79F5A3D} = {3A99E2D1-4E67-47BE-8841-A690485DEA69}
+		{BA57782F-85A4-4A32-8654-AD7523B41387} = {298EA715-55E4-4656-9D2A-E757BC3946A4}
+		{3A28E179-87D9-464D-BE03-C32BE654B457} = {298EA715-55E4-4656-9D2A-E757BC3946A4}
+		{42270A4C-B177-4C96-9DDE-0D9686130908} = {3A99E2D1-4E67-47BE-8841-A690485DEA69}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {135FDAE6-89F0-4429-B980-BDD4E6C8C3DF}
+	EndGlobalSection
+EndGlobal
