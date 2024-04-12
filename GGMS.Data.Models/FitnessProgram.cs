@@ -1,26 +1,22 @@
 ﻿namespace GGMS.Data.Models
 {
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
     using static GGMS.Common.EntityValidationConstants.FittnessProgramConstants;
 
-    public class FittnessProgram
+    public class FitnessProgram
     {
 
-        public FittnessProgram(string nameOfTrainer, string nameOfClient, ,string description, Trainer trainer, ApplicationUser client)
+        public FitnessProgram()
         {
             Id = Guid.NewGuid().ToString();
             DateAssigned = DateTime.Now;
-            NameOfTrainer = nameOfTrainer;
-            NameOfClient = nameOfClient;
-            Description = description;
-            Trainer = trainer;
-            Client = client;
+            Clients = new HashSet<ClientFitnessProgram>();
 
             
         }
 
-        [Key]
-     
+        [Key]   
         public string Id { get; set; }
 
         [Required]
@@ -41,8 +37,12 @@
         [Required]
         public Trainer Trainer { get; set; } = null!;
 
+        [ForeignKey(nameof(Trainer))]
         [Required]
-        public ApplicationUser Client { get; set; } = null!;
+        public string TrainerId { get; set; } = null!;
+
+        [Required]
+        public virtual ICollection<ClientFitnessProgram> Clients { get; set; }
 
 
     }
