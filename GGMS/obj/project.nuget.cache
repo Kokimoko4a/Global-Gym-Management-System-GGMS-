@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< Updated upstream
   "dgSpecHash": "jhFEqKVBXfnQP54+SI31E3+eXuxU78WSzU992bZLzyBr0qjD7WbykozwzV2+RwTdYvgw+pXd7Ix2o0j5RiSMMg==",
+=======
+  "dgSpecHash": "J0Y/E9TZrcrUFk65ZhEf9SpvJvHt/Ra85Ejv63uTddcUAAAOcalz0VJi1chJLgxO9RoAYCb8mY04ZBYGyxFvmg==",
+>>>>>>> Stashed changes
   "success": true,
   "projectFilePath": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS\\GGMS.csproj",
   "expectedPackageFiles": [

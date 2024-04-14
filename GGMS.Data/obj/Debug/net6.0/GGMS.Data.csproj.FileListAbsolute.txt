@@ -16,6 +16,7 @@ D:\Kaloyan\GGMS\GGMS.Data\obj\Debug\net6.0\ref\GGMS.Data.dll
 D:\Kaloyan\GGMS\GGMS.Data\bin\Debug\net6.0\GGMS.Common.dll
 D:\Kaloyan\GGMS\GGMS.Data\bin\Debug\net6.0\GGMS.Common.pdb
 D:\Kaloyan\GGMS\GGMS.Data\obj\Debug\net6.0\GGMS.Data.csproj.Up2Date
+<<<<<<< Updated upstream
 D:\Kaloyan\BackUp\Global-Gym-Management-System-GGMS-\GGMS.Data\bin\Debug\net6.0\GGMS.Data.deps.json
 D:\Kaloyan\BackUp\Global-Gym-Management-System-GGMS-\GGMS.Data\bin\Debug\net6.0\GGMS.Data.runtimeconfig.json
 D:\Kaloyan\BackUp\Global-Gym-Management-System-GGMS-\GGMS.Data\bin\Debug\net6.0\GGMS.Data.dll
@@ -34,3 +35,7 @@ D:\Kaloyan\BackUp\Global-Gym-Management-System-GGMS-\GGMS.Data\obj\Debug\net6.0\
 D:\Kaloyan\BackUp\Global-Gym-Management-System-GGMS-\GGMS.Data\obj\Debug\net6.0\GGMS.Data.pdb
 D:\Kaloyan\BackUp\Global-Gym-Management-System-GGMS-\GGMS.Data\obj\Debug\net6.0\GGMS.Data.genruntimeconfig.cache
 D:\Kaloyan\BackUp\Global-Gym-Management-System-GGMS-\GGMS.Data\obj\Debug\net6.0\ref\GGMS.Data.dll
+=======
+D:\Kaloyan\GGMS\GGMS.Data\bin\Debug\net6.0\GGMS.Data.Models.dll
+D:\Kaloyan\GGMS\GGMS.Data\bin\Debug\net6.0\GGMS.Data.Models.pdb
+>>>>>>> Stashed changes

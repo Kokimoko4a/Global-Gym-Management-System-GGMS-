@@ -874,6 +874,20 @@
         "runtime": {
           "bin/placeholder/GGMS.Common.dll": {}
         }
+      },
+      "GGMS.Data.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GGMS.Common": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.26"
+        },
+        "compile": {
+          "bin/placeholder/GGMS.Data.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GGMS.Data.Models.dll": {}
+        }
       }
     }
   },
@@ -2191,11 +2205,17 @@
       "type": "project",
       "path": "../GGMS.Common/GGMS.Common.csproj",
       "msbuildProject": "../GGMS.Common/GGMS.Common.csproj"
+    },
+    "GGMS.Data.Models/1.0.0": {
+      "type": "project",
+      "path": "../GGMS.Data.Models/GGMS.Data.Models.csproj",
+      "msbuildProject": "../GGMS.Data.Models/GGMS.Data.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "GGMS.Common >= 1.0.0",
+      "GGMS.Data.Models >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.26",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.26",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.26"
@@ -2234,8 +2254,16 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+<<<<<<< Updated upstream
             "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS.Common\\GGMS.Common.csproj": {
               "projectPath": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS.Common\\GGMS.Common.csproj"
+=======
+            "D:\\Kaloyan\\GGMS\\GGMS.Common\\GGMS.Common.csproj": {
+              "projectPath": "D:\\Kaloyan\\GGMS\\GGMS.Common\\GGMS.Common.csproj"
+            },
+            "D:\\Kaloyan\\GGMS\\GGMS.Data.Models\\GGMS.Data.Models.csproj": {
+              "projectPath": "D:\\Kaloyan\\GGMS\\GGMS.Data.Models\\GGMS.Data.Models.csproj"
+>>>>>>> Stashed changes
             }
           }
         }

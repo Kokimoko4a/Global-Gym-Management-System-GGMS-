@@ -82,6 +82,7 @@ D:\Kaloyan\GGMS\GGMS\bin\Debug\net6.0\GGMS.Common.dll
 D:\Kaloyan\GGMS\GGMS\bin\Debug\net6.0\GGMS.Web.ViewModels.dll
 D:\Kaloyan\GGMS\GGMS\bin\Debug\net6.0\GGMS.Common.pdb
 D:\Kaloyan\GGMS\GGMS\bin\Debug\net6.0\GGMS.Web.ViewModels.pdb
+<<<<<<< Updated upstream
 D:\Kaloyan\BackUp\Global-Gym-Management-System-GGMS-\GGMS\bin\Debug\net6.0\appsettings.Development.json
 D:\Kaloyan\BackUp\Global-Gym-Management-System-GGMS-\GGMS\bin\Debug\net6.0\appsettings.json
 D:\Kaloyan\BackUp\Global-Gym-Management-System-GGMS-\GGMS\bin\Debug\net6.0\GGMS.staticwebassets.runtime.json
@@ -166,3 +167,7 @@ D:\Kaloyan\BackUp\Global-Gym-Management-System-GGMS-\GGMS\obj\Debug\net6.0\refin
 D:\Kaloyan\BackUp\Global-Gym-Management-System-GGMS-\GGMS\obj\Debug\net6.0\GGMS.pdb
 D:\Kaloyan\BackUp\Global-Gym-Management-System-GGMS-\GGMS\obj\Debug\net6.0\GGMS.genruntimeconfig.cache
 D:\Kaloyan\BackUp\Global-Gym-Management-System-GGMS-\GGMS\obj\Debug\net6.0\ref\GGMS.dll
+=======
+D:\Kaloyan\GGMS\GGMS\bin\Debug\net6.0\GGMS.Data.Models.dll
+D:\Kaloyan\GGMS\GGMS\bin\Debug\net6.0\GGMS.Data.Models.pdb
+>>>>>>> Stashed changes
