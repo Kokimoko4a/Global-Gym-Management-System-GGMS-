@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Kaloyan\\GGMS\\GGMS\\GGMS.csproj": {}
+    "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS\\GGMS.csproj": {}
   },
   "projects": {
-    "D:\\Kaloyan\\GGMS\\GGMS.Common\\GGMS.Common.csproj": {
+    "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS.Common\\GGMS.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Kaloyan\\GGMS\\GGMS.Common\\GGMS.Common.csproj",
+        "projectUniqueName": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS.Common\\GGMS.Common.csproj",
         "projectName": "GGMS.Common",
-        "projectPath": "D:\\Kaloyan\\GGMS\\GGMS.Common\\GGMS.Common.csproj",
+        "projectPath": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS.Common\\GGMS.Common.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Kaloyan\\GGMS\\GGMS.Common\\obj\\",
+        "outputPath": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -69,14 +69,14 @@
         }
       }
     },
-    "D:\\Kaloyan\\GGMS\\GGMS.Data\\GGMS.Data.csproj": {
+    "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS.Data\\GGMS.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Kaloyan\\GGMS\\GGMS.Data\\GGMS.Data.csproj",
+        "projectUniqueName": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS.Data\\GGMS.Data.csproj",
         "projectName": "GGMS.Data",
-        "projectPath": "D:\\Kaloyan\\GGMS\\GGMS.Data\\GGMS.Data.csproj",
+        "projectPath": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS.Data\\GGMS.Data.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Kaloyan\\GGMS\\GGMS.Data\\obj\\",
+        "outputPath": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -98,8 +98,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Kaloyan\\GGMS\\GGMS.Common\\GGMS.Common.csproj": {
-                "projectPath": "D:\\Kaloyan\\GGMS\\GGMS.Common\\GGMS.Common.csproj"
+              "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS.Common\\GGMS.Common.csproj": {
+                "projectPath": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS.Common\\GGMS.Common.csproj"
               }
             }
           }
@@ -154,14 +154,14 @@
         }
       }
     },
-    "D:\\Kaloyan\\GGMS\\GGMS.Web.ViewModels\\GGMS.Web.ViewModels.csproj": {
+    "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS.Web.ViewModels\\GGMS.Web.ViewModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Kaloyan\\GGMS\\GGMS.Web.ViewModels\\GGMS.Web.ViewModels.csproj",
+        "projectUniqueName": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS.Web.ViewModels\\GGMS.Web.ViewModels.csproj",
         "projectName": "GGMS.Web.ViewModels",
-        "projectPath": "D:\\Kaloyan\\GGMS\\GGMS.Web.ViewModels\\GGMS.Web.ViewModels.csproj",
+        "projectPath": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS.Web.ViewModels\\GGMS.Web.ViewModels.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Kaloyan\\GGMS\\GGMS.Web.ViewModels\\obj\\",
+        "outputPath": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS.Web.ViewModels\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -219,14 +219,14 @@
         }
       }
     },
-    "D:\\Kaloyan\\GGMS\\GGMS\\GGMS.csproj": {
+    "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS\\GGMS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Kaloyan\\GGMS\\GGMS\\GGMS.csproj",
+        "projectUniqueName": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS\\GGMS.csproj",
         "projectName": "GGMS",
-        "projectPath": "D:\\Kaloyan\\GGMS\\GGMS\\GGMS.csproj",
+        "projectPath": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS\\GGMS.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Kaloyan\\GGMS\\GGMS\\obj\\",
+        "outputPath": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -248,14 +248,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Kaloyan\\GGMS\\GGMS.Common\\GGMS.Common.csproj": {
-                "projectPath": "D:\\Kaloyan\\GGMS\\GGMS.Common\\GGMS.Common.csproj"
+              "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS.Common\\GGMS.Common.csproj": {
+                "projectPath": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS.Common\\GGMS.Common.csproj"
               },
-              "D:\\Kaloyan\\GGMS\\GGMS.Data\\GGMS.Data.csproj": {
-                "projectPath": "D:\\Kaloyan\\GGMS\\GGMS.Data\\GGMS.Data.csproj"
+              "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS.Data\\GGMS.Data.csproj": {
+                "projectPath": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS.Data\\GGMS.Data.csproj"
               },
-              "D:\\Kaloyan\\GGMS\\GGMS.Web.ViewModels\\GGMS.Web.ViewModels.csproj": {
-                "projectPath": "D:\\Kaloyan\\GGMS\\GGMS.Web.ViewModels\\GGMS.Web.ViewModels.csproj"
+              "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS.Web.ViewModels\\GGMS.Web.ViewModels.csproj": {
+                "projectPath": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS.Web.ViewModels\\GGMS.Web.ViewModels.csproj"
               }
             }
           }

@@ -1,38 +1,44 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Kaloyan\\GGMS\\GGMS\\",
+  "WorkspaceRootPath": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3A28E179-87D9-464D-BE03-C32BE654B457}|..\\GGMS.Data.Models\\GGMS.Data.Models.csproj|d:\\kaloyan\\ggms\\ggms.data.models\\clientfitnessprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3A28E179-87D9-464D-BE03-C32BE654B457}|..\\GGMS.Data.Models\\GGMS.Data.Models.csproj|d:\\kaloyan\\backup\\global-gym-management-system-ggms-\\ggms.data.models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A28E179-87D9-464D-BE03-C32BE654B457}|..\\GGMS.Data.Models\\GGMS.Data.Models.csproj|d:\\kaloyan\\ggms\\ggms.data.models\\fitnessprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F173477-5859-46EB-A4C0-21353A84384B}|..\\GGMS.Common\\GGMS.Common.csproj|d:\\kaloyan\\ggms\\ggms.common\\entityvalidationconstants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF1BD4E4-6A21-4257-AB7D-1B7DF79F5A3D}|GGMS.csproj|d:\\kaloyan\\ggms\\ggms\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{FF1BD4E4-6A21-4257-AB7D-1B7DF79F5A3D}|GGMS.csproj|solutionrelative:views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF1BD4E4-6A21-4257-AB7D-1B7DF79F5A3D}|GGMS.csproj|d:\\kaloyan\\ggms\\ggms\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FF1BD4E4-6A21-4257-AB7D-1B7DF79F5A3D}|GGMS.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF1BD4E4-6A21-4257-AB7D-1B7DF79F5A3D}|GGMS.csproj|d:\\kaloyan\\ggms\\ggms\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{FF1BD4E4-6A21-4257-AB7D-1B7DF79F5A3D}|GGMS.csproj|solutionrelative:views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF1BD4E4-6A21-4257-AB7D-1B7DF79F5A3D}|GGMS.csproj|d:\\kaloyan\\ggms\\ggms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FF1BD4E4-6A21-4257-AB7D-1B7DF79F5A3D}|GGMS.csproj|d:\\kaloyan\\backup\\global-gym-management-system-ggms-\\ggms\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FF1BD4E4-6A21-4257-AB7D-1B7DF79F5A3D}|GGMS.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{42270A4C-B177-4C96-9DDE-0D9686130908}|..\\GGMS.Web.ViewModels\\GGMS.Web.ViewModels.csproj|d:\\kaloyan\\ggms\\ggms.web.viewmodels\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3A28E179-87D9-464D-BE03-C32BE654B457}|..\\GGMS.Data.Models\\GGMS.Data.Models.csproj|d:\\kaloyan\\backup\\global-gym-management-system-ggms-\\ggms.data.models\\trainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FF1BD4E4-6A21-4257-AB7D-1B7DF79F5A3D}|GGMS.csproj|d:\\kaloyan\\ggms\\ggms\\ggms.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Kaloyan\\GGMS\\GGMS.Data.Models\\ClientFitnessProgram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF1BD4E4-6A21-4257-AB7D-1B7DF79F5A3D}|GGMS.csproj|d:\\kaloyan\\backup\\global-gym-management-system-ggms-\\ggms\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FF1BD4E4-6A21-4257-AB7D-1B7DF79F5A3D}|GGMS.csproj|solutionrelative:views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF1BD4E4-6A21-4257-AB7D-1B7DF79F5A3D}|GGMS.csproj|d:\\kaloyan\\backup\\global-gym-management-system-ggms-\\ggms\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF1BD4E4-6A21-4257-AB7D-1B7DF79F5A3D}|GGMS.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF1BD4E4-6A21-4257-AB7D-1B7DF79F5A3D}|GGMS.csproj|d:\\kaloyan\\backup\\global-gym-management-system-ggms-\\ggms\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FF1BD4E4-6A21-4257-AB7D-1B7DF79F5A3D}|GGMS.csproj|solutionrelative:views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF1BD4E4-6A21-4257-AB7D-1B7DF79F5A3D}|GGMS.csproj|d:\\kaloyan\\backup\\global-gym-management-system-ggms-\\ggms\\ggms.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{FF1BD4E4-6A21-4257-AB7D-1B7DF79F5A3D}|GGMS.csproj|solutionrelative:ggms.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Kaloyan\\GGMS\\GGMS.Web.ViewModels\\Class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Kaloyan\\GGMS\\GGMS.Data.Models\\FitnessProgram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Kaloyan\\GGMS\\GGMS.Common\\EntityValidationConstants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +48,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,24 +64,50 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Trainer.cs",
+              "DocumentMoniker": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS.Data.Models\\Trainer.cs",
+              "RelativeDocumentMoniker": "..\\GGMS.Data.Models\\Trainer.cs",
+              "ToolTip": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS.Data.Models\\Trainer.cs",
+              "RelativeToolTip": "..\\GGMS.Data.Models\\Trainer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-12T19:44:33.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS.Data.Models\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "..\\GGMS.Data.Models\\ApplicationUser.cs",
+              "ToolTip": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS.Data.Models\\ApplicationUser.cs",
+              "RelativeToolTip": "..\\GGMS.Data.Models\\ApplicationUser.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-12T19:44:22.96Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "ClientFitnessProgram.cs",
               "DocumentMoniker": "D:\\Kaloyan\\GGMS\\GGMS.Data.Models\\ClientFitnessProgram.cs",
-              "RelativeDocumentMoniker": "..\\GGMS.Data.Models\\ClientFitnessProgram.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\GGMS\\GGMS.Data.Models\\ClientFitnessProgram.cs",
               "ToolTip": "D:\\Kaloyan\\GGMS\\GGMS.Data.Models\\ClientFitnessProgram.cs",
-              "RelativeToolTip": "..\\GGMS.Data.Models\\ClientFitnessProgram.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "RelativeToolTip": "..\\..\\..\\GGMS\\GGMS.Data.Models\\ClientFitnessProgram.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-12T13:35:03.603Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Error.cshtml",
-              "DocumentMoniker": "D:\\Kaloyan\\GGMS\\GGMS\\Views\\Shared\\Error.cshtml",
+              "DocumentMoniker": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\Error.cshtml",
-              "ToolTip": "D:\\Kaloyan\\GGMS\\GGMS\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS\\Views\\Shared\\Error.cshtml",
               "RelativeToolTip": "Views\\Shared\\Error.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -83,11 +115,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\Kaloyan\\GGMS\\GGMS\\Controllers\\HomeController.cs",
+              "DocumentMoniker": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "D:\\Kaloyan\\GGMS\\GGMS\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Controllers\\HomeController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -95,11 +127,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "D:\\Kaloyan\\GGMS\\GGMS\\Views\\_ViewImports.cshtml",
+              "DocumentMoniker": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "Views\\_ViewImports.cshtml",
-              "ToolTip": "D:\\Kaloyan\\GGMS\\GGMS\\Views\\_ViewImports.cshtml",
+              "ToolTip": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS\\Views\\_ViewImports.cshtml",
               "RelativeToolTip": "Views\\_ViewImports.cshtml",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAAMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -107,35 +139,36 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Class1.cs",
               "DocumentMoniker": "D:\\Kaloyan\\GGMS\\GGMS.Web.ViewModels\\Class1.cs",
-              "RelativeDocumentMoniker": "..\\GGMS.Web.ViewModels\\Class1.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\GGMS\\GGMS.Web.ViewModels\\Class1.cs",
               "ToolTip": "D:\\Kaloyan\\GGMS\\GGMS.Web.ViewModels\\Class1.cs",
-              "RelativeToolTip": "..\\GGMS.Web.ViewModels\\Class1.cs",
+              "RelativeToolTip": "..\\..\\..\\GGMS\\GGMS.Web.ViewModels\\Class1.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-08T15:06:43.927Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Kaloyan\\GGMS\\GGMS\\Program.cs",
+              "DocumentMoniker": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Kaloyan\\GGMS\\GGMS\\Program.cs",
+              "ToolTip": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAwAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T15:02:58.833Z"
+              "WhenOpened": "2024-04-08T15:02:58.833Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "GGMS.csproj",
-              "DocumentMoniker": "D:\\Kaloyan\\GGMS\\GGMS\\GGMS.csproj",
+              "DocumentMoniker": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS\\GGMS.csproj",
               "RelativeDocumentMoniker": "GGMS.csproj",
-              "ToolTip": "D:\\Kaloyan\\GGMS\\GGMS\\GGMS.csproj",
+              "ToolTip": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS\\GGMS.csproj",
               "RelativeToolTip": "GGMS.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -143,25 +176,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 9,
               "Title": "FitnessProgram.cs",
               "DocumentMoniker": "D:\\Kaloyan\\GGMS\\GGMS.Data.Models\\FitnessProgram.cs",
-              "RelativeDocumentMoniker": "..\\GGMS.Data.Models\\FitnessProgram.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\GGMS\\GGMS.Data.Models\\FitnessProgram.cs",
               "ToolTip": "D:\\Kaloyan\\GGMS\\GGMS.Data.Models\\FitnessProgram.cs",
-              "RelativeToolTip": "..\\GGMS.Data.Models\\FitnessProgram.cs",
+              "RelativeToolTip": "..\\..\\..\\GGMS\\GGMS.Data.Models\\FitnessProgram.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T14:59:00.253Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-08T14:59:00.253Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
               "Title": "EntityValidationConstants.cs",
               "DocumentMoniker": "D:\\Kaloyan\\GGMS\\GGMS.Common\\EntityValidationConstants.cs",
-              "RelativeDocumentMoniker": "..\\GGMS.Common\\EntityValidationConstants.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\GGMS\\GGMS.Common\\EntityValidationConstants.cs",
               "ToolTip": "D:\\Kaloyan\\GGMS\\GGMS.Common\\EntityValidationConstants.cs",
-              "RelativeToolTip": "..\\GGMS.Common\\EntityValidationConstants.cs",
+              "RelativeToolTip": "..\\..\\..\\GGMS\\GGMS.Common\\EntityValidationConstants.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-08T14:55:06.627Z"

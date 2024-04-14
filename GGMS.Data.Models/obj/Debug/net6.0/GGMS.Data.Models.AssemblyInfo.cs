@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GGMS.Data.Models")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5470cb147fc75781695d0e1040a0382fc7a14827")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef9018ad523b4b84f4d4cb8cad75f6933e958b4e")]
 [assembly: System.Reflection.AssemblyProductAttribute("GGMS.Data.Models")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GGMS.Data.Models")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

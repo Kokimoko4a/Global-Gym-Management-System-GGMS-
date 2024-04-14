@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Kaloyan\\GGMS\\GGMS.Web.ViewModels\\GGMS.Web.ViewModels.csproj",
+      "projectUniqueName": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS.Web.ViewModels\\GGMS.Web.ViewModels.csproj",
       "projectName": "GGMS.Web.ViewModels",
-      "projectPath": "D:\\Kaloyan\\GGMS\\GGMS.Web.ViewModels\\GGMS.Web.ViewModels.csproj",
+      "projectPath": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS.Web.ViewModels\\GGMS.Web.ViewModels.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\Kaloyan\\GGMS\\GGMS.Web.ViewModels\\obj\\",
+      "outputPath": "D:\\Kaloyan\\BackUp\\Global-Gym-Management-System-GGMS-\\GGMS.Web.ViewModels\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
