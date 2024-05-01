@@ -11,7 +11,10 @@ namespace GGMS
             var builder = WebApplication.CreateBuilder(args);
 
             Console.WriteLine(" THE BEST");
-            Console.WriteLine(  12211221);
+
+
+            Console.WriteLine(1192007);
+
 
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
