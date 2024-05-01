@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/mHL9F/zHd2/CQQRvyUrPMJFR/MewWqPLWeUzs4v/B4sqUbtbIbCAHl8EbNFjPyqOoSaoLHY34/L8Xpr1K5pkg==",
+  "dgSpecHash": "MNYHdw7DSliIhhMcTYXNLWDcgR6+A2t8CMEN9kn2/8GTK12TGfq2lNPUSHkCELZjTCjGXmAJJgyN63e0Abe9vQ==",
   "success": true,
-  "projectFilePath": "D:\\Kaloyan\\GGMS\\GGMS\\GGMS.csproj",
+  "projectFilePath": "D:\\Kaloyan\\GGMS\\Global-Gym-Management-System-GGMS-\\GGMS\\GGMS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.26\\microsoft.aspnetcore.cryptography.internal.6.0.26.nupkg.sha512",
