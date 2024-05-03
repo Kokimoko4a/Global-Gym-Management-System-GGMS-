@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GGMS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cee413d78d11a3d4a8e1a770b644c72788f9368e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c463a480852f2ef6d1b987d4ccdffbeade1d4e5")]
 [assembly: System.Reflection.AssemblyProductAttribute("GGMS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GGMS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
