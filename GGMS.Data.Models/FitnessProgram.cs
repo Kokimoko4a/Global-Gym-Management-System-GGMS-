@@ -9,7 +9,7 @@ namespace GGMS.Data.Models
         {
             Id = Guid.NewGuid().ToString();
             IssueDate = DateTime.Now;
-            FitnessProgramUsers = new HashSet<string>();
+           // FitnessProgramUsers = new HashSet<string>();
         }
 
         [Required]
@@ -25,7 +25,7 @@ namespace GGMS.Data.Models
         [Required]
         public DateTime IssueDate { get; set; }
 
-        [Required]
+     /*   [Required]
         [ForeignKey(nameof(Trainer))]
         public string IdOfTrainer { get; set; } = null!;
 
@@ -33,7 +33,7 @@ namespace GGMS.Data.Models
         public string Trainer { get; set; } = null!;
 
         [Required]
-        public virtual ICollection<string> FitnessProgramUsers { get; set; } = null!;
+        public virtual ICollection<string> FitnessProgramUsers { get; set; } = null!;*/
 
 
 

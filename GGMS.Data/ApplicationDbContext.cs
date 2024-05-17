@@ -17,6 +17,6 @@ namespace GGMS.Data
             }
         }
 
-        public DbSet<FitnessProgram> Categories { get; set; } = null!;
+        public DbSet<FitnessProgram> FitnessPrograms { get; set; } = null!;
     }
 }
