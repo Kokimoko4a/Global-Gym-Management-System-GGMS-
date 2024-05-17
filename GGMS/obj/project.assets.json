@@ -951,6 +951,41 @@
             "rid": "win"
           }
         }
+      },
+      "GGMS.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GGMS.Data.Models": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.11",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.11"
+        },
+        "compile": {
+          "bin/placeholder/GGMS.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GGMS.Data.dll": {}
+        }
+      },
+      "GGMS.Data.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/GGMS.Data.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GGMS.Data.Models.dll": {}
+        }
+      },
+      "GGMS.Web.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/GGMS.Web.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GGMS.Web.ViewModels.dll": {}
+        }
       }
     }
   },
@@ -2442,10 +2477,27 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "GGMS.Data/1.0.0": {
+      "type": "project",
+      "path": "../GGMS.Data/GGMS.Data.csproj",
+      "msbuildProject": "../GGMS.Data/GGMS.Data.csproj"
+    },
+    "GGMS.Data.Models/1.0.0": {
+      "type": "project",
+      "path": "../GGMS.Data.Models/GGMS.Data.Models.csproj",
+      "msbuildProject": "../GGMS.Data.Models/GGMS.Data.Models.csproj"
+    },
+    "GGMS.Web.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../GGMS.Web.ViewModels/GGMS.Web.ViewModels.csproj",
+      "msbuildProject": "../GGMS.Web.ViewModels/GGMS.Web.ViewModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "GGMS.Data >= 1.0.0",
+      "GGMS.Web.ViewModels >= 1.0.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 6.0.26",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.26",
       "Microsoft.AspNetCore.Identity.UI >= 6.0.26",
@@ -2460,9 +2512,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Kaloyan\\GGMS\\Global-Gym-Management-System-GGMS-\\GGMS\\GGMS.csproj",
-      "projectName": "GGMS",
-      "projectPath": "D:\\Kaloyan\\GGMS\\Global-Gym-Management-System-GGMS-\\GGMS\\GGMS.csproj",
+      "projectUniqueName": "D:\\Kaloyan\\GGMS\\Global-Gym-Management-System-GGMS-\\GGMS\\GGMS.Web.csproj",
+      "projectName": "GGMS.Web",
+      "projectPath": "D:\\Kaloyan\\GGMS\\Global-Gym-Management-System-GGMS-\\GGMS\\GGMS.Web.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
       "outputPath": "D:\\Kaloyan\\GGMS\\Global-Gym-Management-System-GGMS-\\GGMS\\obj\\",
       "projectStyle": "PackageReference",
@@ -2485,7 +2537,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Kaloyan\\GGMS\\Global-Gym-Management-System-GGMS-\\GGMS.Data\\GGMS.Data.csproj": {
+              "projectPath": "D:\\Kaloyan\\GGMS\\Global-Gym-Management-System-GGMS-\\GGMS.Data\\GGMS.Data.csproj"
+            },
+            "D:\\Kaloyan\\GGMS\\Global-Gym-Management-System-GGMS-\\GGMS.Web.ViewModels\\GGMS.Web.ViewModels.csproj": {
+              "projectPath": "D:\\Kaloyan\\GGMS\\Global-Gym-Management-System-GGMS-\\GGMS.Web.ViewModels\\GGMS.Web.ViewModels.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

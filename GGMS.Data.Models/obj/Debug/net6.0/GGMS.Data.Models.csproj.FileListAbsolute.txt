@@ -1,0 +1,12 @@
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Data.Models\bin\Debug\net6.0\GGMS.Data.Models.deps.json
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Data.Models\bin\Debug\net6.0\GGMS.Data.Models.dll
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Data.Models\bin\Debug\net6.0\GGMS.Data.Models.pdb
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Data.Models\obj\Debug\net6.0\GGMS.Data.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Data.Models\obj\Debug\net6.0\GGMS.Data.Models.AssemblyInfoInputs.cache
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Data.Models\obj\Debug\net6.0\GGMS.Data.Models.AssemblyInfo.cs
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Data.Models\obj\Debug\net6.0\GGMS.Data.Models.csproj.CoreCompileInputs.cache
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Data.Models\obj\Debug\net6.0\GGMS.Data.Models.sourcelink.json
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Data.Models\obj\Debug\net6.0\GGMS.Data.Models.dll
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Data.Models\obj\Debug\net6.0\refint\GGMS.Data.Models.dll
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Data.Models\obj\Debug\net6.0\GGMS.Data.Models.pdb
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Data.Models\obj\Debug\net6.0\ref\GGMS.Data.Models.dll
