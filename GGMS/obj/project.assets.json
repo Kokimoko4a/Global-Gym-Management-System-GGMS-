@@ -970,6 +970,9 @@
       "GGMS.Data.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.Extensions.Identity.Stores": "6.0.11"
+        },
         "compile": {
           "bin/placeholder/GGMS.Data.Models.dll": {}
         },

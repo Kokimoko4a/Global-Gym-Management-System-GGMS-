@@ -542,6 +542,9 @@
         }
       },
       "GGMS.Data.Models/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Identity.Stores": "6.0.11"
+        },
         "runtime": {
           "GGMS.Data.Models.dll": {}
         }
