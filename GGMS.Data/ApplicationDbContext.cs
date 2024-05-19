@@ -3,6 +3,7 @@ using GGMS.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace GGMS.Data
 {
@@ -20,10 +21,23 @@ namespace GGMS.Data
 
         public DbSet<FitnessProgram> FitnessPrograms { get; set; } = null!;
 
+        public DbSet<Trainer> Trainers { get; set; } = null!;
+
+        public DbSet<UserFitnessProgram> UserFitnessPrograms { get; set; } = null!;
+
+
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            Assembly configAssembly = Assembly.GetAssembly(typeof(ApplicationDbContext)) ??
+                                    Assembly.GetExecutingAssembly();
+
+            builder.ApplyConfigurationsFromAssembly(configAssembly);
+
             base.OnModelCreating(builder);
+
+
             // Ensure the Id is mapped correctly as a Guid
             builder.Entity<ApplicationUser>(entity =>
             {
