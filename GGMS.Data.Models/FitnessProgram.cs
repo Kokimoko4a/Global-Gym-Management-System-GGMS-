@@ -33,6 +33,13 @@ namespace GGMS.Data.Models
         public Trainer Trainer { get; set; } = null!;
 
         [Required]
+        public Gym Gym { get; set; } = null!;
+
+        [Required]
+        [ForeignKey(nameof(Gym))]
+        public Guid GymId { get; set; } 
+
+        [Required]
         public virtual ICollection<UserFitnessProgram> FitnessProgramUsers { get; set; } = null!;
 
 
