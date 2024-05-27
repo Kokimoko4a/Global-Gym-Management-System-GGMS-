@@ -16,3 +16,5 @@ D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Data\bin\Debug\net6.0\GG
 D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Data\obj\Debug\net6.0\GGMS.Data.csproj.Up2Date
 D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Data\bin\Debug\net6.0\GGMS.Data.runtimeconfig.json
 D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Data\obj\Debug\net6.0\GGMS.Data.genruntimeconfig.cache
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Data\bin\Debug\net6.0\GGMS.Common.dll
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Data\bin\Debug\net6.0\GGMS.Common.pdb

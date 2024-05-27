@@ -82,3 +82,5 @@ D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS\bin\Debug\net6.0\GGMS.We
 D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS\bin\Debug\net6.0\GGMS.Web.ViewModels.pdb
 D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS\bin\Debug\net6.0\GGMS.Data.Models.dll
 D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS\bin\Debug\net6.0\GGMS.Data.Models.pdb
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS\bin\Debug\net6.0\GGMS.Common.dll
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS\bin\Debug\net6.0\GGMS.Common.pdb

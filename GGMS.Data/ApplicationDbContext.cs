@@ -29,6 +29,8 @@ namespace GGMS.Data
 
         public DbSet<GymOwner> GymOwners { get; set; } = null!;
 
+        public DbSet<FitnessCard> FitnessCards { get; set; } = null!;
+
 
 
 

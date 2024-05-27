@@ -1,20 +1,20 @@
-﻿using System;
-using System.Buffers;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+
 
 namespace GGMS.Data.Models
 {
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using static GGMS.Common.ValidationConstants.GymValidationConstants;
+
+
     public class Gym
     {
         public Gym()
         {
             Id = Guid.NewGuid();
             FitnessPrograms = new HashSet<FitnessProgram>();
+            FitnessCards = new HashSet<FitnessCard>();
         }
 
         [Key]
@@ -22,9 +22,11 @@ namespace GGMS.Data.Models
         public Guid Id { get; set; }
 
         [Required]
+        [StringLength(NameMaxLength,MinimumLength = NameMinLength)]
         public string Name { get; set; } = null!;
 
         [Required]
+        [StringLength(AddressMaxLength,MinimumLength = AddressMinLength)]
         public string Address { get; set; } = null!;
 
         [Required]
@@ -36,6 +38,8 @@ namespace GGMS.Data.Models
 
         [Required]
         public ICollection<FitnessProgram> FitnessPrograms { get; set; }
+
+        public ICollection<FitnessCard> FitnessCards { get; set; }
     }
 
 }

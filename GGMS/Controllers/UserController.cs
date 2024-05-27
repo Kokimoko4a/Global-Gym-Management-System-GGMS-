@@ -78,7 +78,7 @@
         [HttpGet]
         public async Task<IActionResult> Login(string? returnUrl = null)
         {
-          /*  await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
+           /* await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
 
             LoginFormModel model = new LoginFormModel()
             {

@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace GGMS.Data.Models
+﻿namespace GGMS.Data.Models
 {
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using static GGMS.Common.ValidationConstants.FitnessProgramValidationConstants;
+
     public class FitnessProgram
     {
         public FitnessProgram()
@@ -17,9 +18,11 @@ namespace GGMS.Data.Models
         public Guid Id { get; set; }
 
         [Required]
+        [StringLength(TitleMaxLength, MinimumLength = TitleMinLength)]
         public string Title { get; set; } = null!;
 
         [Required]
+        [StringLength(DescriptionMaxLength,MinimumLength = DescriptionMinLength)]
         public string Description { get; set; } = null!;
 
         [Required]

@@ -18,21 +18,6 @@ namespace GGMS.Data.Models
         [Required]
         public Guid Id { get; set; }
 
-        [Required]
-        public string FirstName { get; set; } = null!;
-        
-        [Required]
-        public string LastName { get; set; } = null!;
-
-        [Required]
-        public int Age { get; set; }
-
-        [Required]
-        public string Address { get; set; } = null!;
-
         public ICollection<FitnessProgram> FitnessPrograms { get; set; } = null!;
-
-
-
     }
 }
