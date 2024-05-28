@@ -8,6 +8,7 @@
 
     using System.Text;
     using GGMS.Data.Models;
+    using GGMS.Web.ViewModels.User;
 
 
     // using System.Web.SessionState.HttpSessionState;
@@ -37,60 +38,63 @@
 
         [HttpPost]
 
-        /*   public async Task<IActionResult> Register(RecipeSharingPlatform.Web.ViewModels.User.RegisterFormModel model)
-           {
-               if (!ModelState.IsValid)
-               {
-                   return View(model);
-               }
+        public async Task<IActionResult> Register(RegisterFormModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
 
-               ApplicationUser user = new ApplicationUser()
-               {
-                   FirstName = model.FirstName,
-                   LastName = model.LastName
-               };
+            ApplicationUser user = new ApplicationUser()
+            {
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                TelephoneNumber = model.TelephoneNumber,
+                Age = model.Age,
+                Address = model.Address
+            };
 
-               await userManager.SetEmailAsync(user, model.Email);
-               await userManager.SetUserNameAsync(user, model.Email);
+            await userManager.SetEmailAsync(user, model.Email);
+            await userManager.SetUserNameAsync(user, model.Email);
 
-               IdentityResult result =
-                   await userManager.CreateAsync(user, model.Password);
+            IdentityResult result =
+                await userManager.CreateAsync(user, model.Password);
 
-               if (!result.Succeeded)
-               {
-                   foreach (IdentityError error in result.Errors)
-                   {
-                       ModelState.AddModelError(string.Empty, error.Description);
-                   }
+            if (!result.Succeeded)
+            {
+                foreach (IdentityError error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
 
-                   return View(model);
-               }
+                return View(model);
+            }
 
-               await signInManager.SignInAsync(user, false);
+            await signInManager.SignInAsync(user, false);
 
-               memoryCache.Remove(UsersCacheKey);
+            // memoryCache.Remove(UsersCacheKey);
 
-               TempData[SuccessMessage] = "Succesfully made account";
+            //   TempData[SuccessMessage] = "Succesfully made account";
 
-               return RedirectToAction("Index", "Home");
-           }*/
+            return RedirectToAction("Index", "Home");
+        }
 
         [HttpGet]
         public async Task<IActionResult> Login(string? returnUrl = null)
         {
-           /* await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
+             await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
 
-            LoginFormModel model = new LoginFormModel()
-            {
-                ReturnUrl = returnUrl
-            };
+             LoginFormModel model = new LoginFormModel()
+             {
+                 ReturnUrl = returnUrl
+             };
 
-            return View(model);*/
+             return View(model);
 
-            return NoContent();
+     
         }
 
-        /*  [HttpPost]
+          [HttpPost]
           public async Task<IActionResult> Login(LoginFormModel model)
           {
               if (!ModelState.IsValid)
@@ -103,14 +107,14 @@
 
               if (!result.Succeeded)
               {
-                  TempData[ErrorMessage] =
-                      "There was an error while logging you in! Your password can be incorrect! Please try again or contact an administrator.";
+                 // TempData[ErrorMessage] =
+                    //  "There was an error while logging you in! Your password can be incorrect! Please try again or contact an administrator.";
 
                   return View(model);
               }
 
               return Redirect(model.ReturnUrl ?? "/Home/Index");
-          }*/
+          }
 
         /* [HttpGet]
          public async Task<IActionResult> ViewProfile(Guid id)
@@ -146,7 +150,7 @@
 
              return RedirectToAction("Logout", "User");
 
-         }
+         }*/
 
 
 
@@ -154,12 +158,12 @@
          {
              await signInManager.SignOutAsync();
 
-             TempData[SuccessMessage] = "You successfully deleted your account";
+             //TempData[SuccessMessage] = "You successfully deleted your account";
 
              return RedirectToAction("Index", "Home");
          }
 
-         public async Task<FileResult> DownloadUserData(Guid id)
+         /*public async Task<FileResult> DownloadUserData(Guid id)
          {
              /* Retrieve user data and serialize it*/
         /*var userData = await userService.GetUserDataForCurrentUser(id);

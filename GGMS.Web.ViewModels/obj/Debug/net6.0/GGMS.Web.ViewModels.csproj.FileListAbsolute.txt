@@ -10,3 +10,7 @@ D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Web.ViewModels\obj\Debug
 D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Web.ViewModels\obj\Debug\net6.0\refint\GGMS.Web.ViewModels.dll
 D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Web.ViewModels\obj\Debug\net6.0\GGMS.Web.ViewModels.pdb
 D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Web.ViewModels\obj\Debug\net6.0\ref\GGMS.Web.ViewModels.dll
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Web.ViewModels\bin\Debug\net6.0\GGMS.Common.dll
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Web.ViewModels\bin\Debug\net6.0\GGMS.Common.pdb
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Web.ViewModels\obj\Debug\net6.0\GGMS.Web.ViewModels.csproj.AssemblyReference.cache
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Web.ViewModels\obj\Debug\net6.0\GGMS.Web.EA6D4A58.Up2Date

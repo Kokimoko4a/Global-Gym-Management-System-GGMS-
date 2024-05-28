@@ -1,5 +1,4 @@
-﻿﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -143,21 +142,27 @@
         </nav>
         <main class="main-content">
             <header>
+              
+
                 <h1>Welcome to Global Gym Management System</h1>
                 <div class="header-buttons">
 
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <button onclick="location.href='@Url.Action("Logout", "Account")'">Logout</button>
+                        <button onclick="location.href='@Url.Action("Logout", "User")'">Logout</button>
+
+                    }
+
+                    else
+                    {
+                        <button onclick="location.href='@Url.Action("Login", "User")'">Login</button>
+                        <button onclick="location.href='@Url.Action("Register", "User")'">Register</button>
+
 
                     }
 
 
-                    <button onclick="location.href='@Url.Action("Login", "User")'">Login</button>
-                    <button onclick="location.href='@Url.Action("Register", "Account")'">Register</button>
-
-
-
+                    <button onclick="location.href='@Url.Action("Index", "Home")'">Home</button>
 
                 </div>
             </header>

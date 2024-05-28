@@ -45,6 +45,14 @@
             public const int TelephoneNumberMaxLength = 10;
 
             public const int TelephoneNumberMinLength = 3;
+
+            public const int MinPasswordLength = 4;
+
+            public const int MaxPasswordLength = 35;
+
+            public const int MinEmailLength = 10;
+
+            public const int MaxEmailLength = 80;
         }
     }
 }
