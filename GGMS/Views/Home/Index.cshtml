@@ -3,32 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fetch API Example</title>
+    <title>Global Gym Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .welcome-section {
+            background: url('https://static.vecteezy.com/system/resources/previews/026/991/500/large_2x/the-gym-room-of-a-beautiful-bright-modern-style-house-ai-generated-photo.jpg') no-repeat center center/cover;
+            color: #fff;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+            .welcome-section h1 {
+                font-size: 3rem;
+                margin-bottom: 10px;
+            }
+
+            .welcome-section p {
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+            }
+
+        .btn {
+            background: #ff6200;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+            margin: 10px;
+            transition: background 0.3s ease;
+        }
+
+            .btn:hover {
+                background: #e55a00;
+            }
+
+        .info-section {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+        }
+
+            .info-section h2 {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+            }
+
+            .info-section p {
+                font-size: 1.2rem;
+                margin-bottom: 30px;
+            }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+    </style>
 </head>
 <body>
-    <button id="1">Click me</button>
-    <div id="output"></div>
+    <header>
+        <div class="logo">Global Gym</div>
+    </header>
 
-    <script>
-        // Get reference to the button and output div
-        const btn = document.getElementById('1');
-        const outputDiv = document.createElement('div');
-        document.body.appendChild(outputDiv);
+    <section id="home" class="welcome-section">
+        <h1>Welcome to Global Gym</h1>
+        <p>Your ultimate destination for fitness and health.</p>
+    </section>
 
-        btn.addEventListener('click', async () => {
-
-            let res = await fetch('https://localhost:7113/Home/Action', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify('ok')
-            });
-
-
-
-            outputDiv.innerHTML = await res.text()
-        });
-    </script>
+    <section id="info" class="info-section">
+        <h2>About Our System</h2>
+        <p>
+            The Global Gym Management System is designed to streamline your fitness journey.
+            Explore various gyms in your area, access personalized training plans, and connect
+            with professional gym trainers to achieve your fitness goals.
+        </p>
+        <div class="buttons">
+            <a href="#explore" class="btn">Explore Gyms</a>
+            <a href="#contact" class="btn">Contact Trainers</a>
+            <a href="#become-owner" class="btn">Become a Gym Owner</a>
+            <a href="#become-trainer" class="btn">Become a Trainer</a>
+        </div>
+    </section>
 </body>
 </html>
