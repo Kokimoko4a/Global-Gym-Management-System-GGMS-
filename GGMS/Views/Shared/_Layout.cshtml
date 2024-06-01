@@ -132,43 +132,31 @@
     <div class="container">
         <nav class="navbar">
             <ul>
-                <li><a href="@Url.Action("Index", "Home")"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
-                <li><a href="@Url.Action("Members", "Home")"><i class="fas fa-users"></i><span>Members</span></a></li>
-                <li><a href="@Url.Action("Classes", "Home")"><i class="fas fa-dumbbell"></i><span>Classes</span></a></li>
-                <li><a href="@Url.Action("Trainers", "Home")"><i class="fas fa-user-tie"></i><span>Trainers</span></a></li>
-                <li><a href="@Url.Action("Schedule", "Home")"><i class="fas fa-calendar-alt"></i><span>Schedule</span></a></li>
-                <li><a href="@Url.Action("Settings", "Home")"><i class="fas fa-cogs"></i><span>Settings</span></a></li>
+                <li><a href="@Url.Action("Index", "Home")"><i class="fas fa-search"></i><span>Explore Gyms</span></a></li>
+                <li><a href="@Url.Action("Trainers", "Home")"><i class="fas fa-user-tie"></i><span>Explore Trainers</span></a></li>
+
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li><a href="@Url.Action("Profile", "User")"><i class="fas fa-user"></i><span>My Profile</span></a></li>
+                }
             </ul>
         </nav>
         <main class="main-content">
             <header>
-              
-
                 <h1>Welcome to Global Gym Management System</h1>
                 <div class="header-buttons">
-
                     @if (User.Identity.IsAuthenticated)
                     {
                         <button onclick="location.href='@Url.Action("Logout", "User")'">Logout</button>
-
                     }
-
                     else
                     {
                         <button onclick="location.href='@Url.Action("Login", "User")'">Login</button>
                         <button onclick="location.href='@Url.Action("Register", "User")'">Register</button>
-
-
                     }
-
-
                     <button onclick="location.href='@Url.Action("Index", "Home")'">Home</button>
-
                 </div>
             </header>
-
-
-
             <section>
                 @RenderBody()
             </section>
@@ -184,4 +172,6 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
+
 </html>

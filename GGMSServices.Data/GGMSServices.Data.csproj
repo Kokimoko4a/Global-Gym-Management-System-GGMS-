@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\GGMS.Data.Models\GGMS.Data.Models.csproj" />
     <ProjectReference Include="..\GGMS.Data\GGMS.Data.csproj" />
     <ProjectReference Include="..\GGMS.Web.ViewModels\GGMS.Web.ViewModels.csproj" />

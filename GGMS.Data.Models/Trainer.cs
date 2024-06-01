@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GGMS.Data.Models
+﻿namespace GGMS.Data.Models
 {
+
+    using System.ComponentModel.DataAnnotations;
+    using static GGMS.Common.ValidationConstants.TrainerValidationConstants;
+
     public class Trainer
     {
         public Trainer()
         {
             FitnessPrograms = new HashSet<FitnessProgram>();
+            Clients = new HashSet<ApplicationUser>();
         }
 
         [Key]
@@ -19,5 +17,11 @@ namespace GGMS.Data.Models
         public Guid Id { get; set; }
 
         public ICollection<FitnessProgram> FitnessPrograms { get; set; } = null!;
+
+        public ICollection<ApplicationUser> Clients { get; set; } = null!;
+
+        [Required]
+        [StringLength(BioghraphyMaxLength , MinimumLength = BioghraphyMinLength)]
+        public string Biography { get; set; } = null!;
     }
 }

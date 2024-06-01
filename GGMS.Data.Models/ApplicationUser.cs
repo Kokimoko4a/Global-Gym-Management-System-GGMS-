@@ -2,6 +2,7 @@
 {
     using Microsoft.AspNetCore.Identity;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
     using static GGMS.Common.ValidationConstants.UserValidationConstants;
 
     public class ApplicationUser : IdentityUser<Guid>
@@ -36,5 +37,12 @@
         [Required]
         [StringLength(AddressMaxLength, MinimumLength = AddressMinLength)]
         public string Address { get; set; } = null!;
+
+  
+        public Trainer Trainer { get; set; } = null!;
+
+        [ForeignKey(nameof(Trainer))]
+        
+        public Guid? TrainerId { get; set; }
     }
 }

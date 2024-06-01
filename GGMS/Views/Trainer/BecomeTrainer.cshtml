@@ -1,0 +1,65 @@
+﻿@model GGMS.Web.ViewModels.Trainer.TainerViewModel
+
+@{
+    ViewData["Title"] = "Become a Trainer";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Adjust the layout path as needed
+}
+
+<style>
+    .trainer-form-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #000;
+        color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+        .trainer-form-container h2 {
+            color: #ffa500; /* Orange color */
+        }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        color: #ffa500; /* Orange color */
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .btn-submit {
+        background-color: #ffa500; /* Orange color */
+        color: #000;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+        .btn-submit:hover {
+            background-color: #e69500; /* Darker orange on hover */
+        }
+</style>
+
+<div class="trainer-form-container">
+    <h2>Become a Trainer</h2>
+    <form asp-action="BecomeTrainer" method="post">
+        <div class="form-group">
+            <label asp-for="Biography"></label>
+            <textarea asp-for="Biography" class="form-control"></textarea>
+            <span asp-validation-for="Biography" class="text-danger"></span>
+        </div>
+        <button  type="submit" class="btn-submit">Submit</button>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -54,5 +54,12 @@
 
             public const int MaxEmailLength = 80;
         }
+
+        public static class TrainerValidationConstants
+        {
+            public const int BioghraphyMaxLength = 256;
+
+            public const int BioghraphyMinLength = 20;
+        }
     }
 }

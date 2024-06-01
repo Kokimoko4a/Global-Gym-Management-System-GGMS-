@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GGMS.Web.ViewModels", "..\G
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{17B1A16B-1EC7-4BD9-80D8-4951AA798C52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GGMSServices.Data", "..\GGMSServices.Data\GGMSServices.Data.csproj", "{8C8F4695-5B6A-494E-ACCC-D4F529129B7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GGMSServices.Data", "..\GGMSServices.Data\GGMSServices.Data.csproj", "{8C8F4695-5B6A-494E-ACCC-D4F529129B7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GGMS.Web.Infrastructure", "..\GGMS.Web.Infrastructure\GGMS.Web.Infrastructure.csproj", "{9E60180B-1C0F-4274-AF8E-6870452DBF30}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{8C8F4695-5B6A-494E-ACCC-D4F529129B7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C8F4695-5B6A-494E-ACCC-D4F529129B7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C8F4695-5B6A-494E-ACCC-D4F529129B7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E60180B-1C0F-4274-AF8E-6870452DBF30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E60180B-1C0F-4274-AF8E-6870452DBF30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E60180B-1C0F-4274-AF8E-6870452DBF30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E60180B-1C0F-4274-AF8E-6870452DBF30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

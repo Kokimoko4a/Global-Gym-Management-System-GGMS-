@@ -1,5 +1,7 @@
 using GGMS.Data;
 using GGMS.Data.Models;
+using GGMS.Web.Infrastructure.Extensions;
+using GGMSServices.Data.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,6 +21,11 @@ namespace GGMS
 
             builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+             builder.Services.AddApplicationServices(typeof(ITrainerService));
+
+
+
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();

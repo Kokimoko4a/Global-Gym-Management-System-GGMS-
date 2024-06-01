@@ -17,11 +17,13 @@ namespace GGMS.Data.Configurations
 
             builder.HasOne(x => x.User)
                 .WithMany(x => x.FitnessPrograms)
-                .HasForeignKey(x => x.UserId);
+                .HasForeignKey(x => x.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasOne(x => x.FitnessProgram)
                 .WithMany(x => x.FitnessProgramUsers)
-                .HasForeignKey(x => x.FitnessProgramId);
+                .HasForeignKey(x => x.FitnessProgramId)
+                     .OnDelete(DeleteBehavior.Restrict); ;
         }
     }
 }

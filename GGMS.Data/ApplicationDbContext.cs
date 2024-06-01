@@ -48,6 +48,7 @@ namespace GGMS.Data
             builder.Entity<ApplicationUser>(entity =>
             {
                 entity.Property(e => e.Id).HasColumnType("uniqueidentifier");
+                entity.Property(e => e.TrainerId).IsRequired(false);
             });
         }
     }
