@@ -1,0 +1,80 @@
+﻿@using GGMS.Web.ViewModels.Trainer;
+@model TrainerBigViewModel;
+
+@{
+    ViewData["Title"] = "Trainer page";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .detail {
+            margin-bottom: 15px;
+        }
+
+            .detail label {
+                font-weight: bold;
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            .detail span {
+                display: block;
+                color: #666;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>@ViewData["Title"]</h2>
+        <div class="detail">
+            <label>First Name:</label>
+            <span>@Model.FirstName</span>
+        </div>
+        <div class="detail">
+            <label>Last Name:</label>
+            <span>@Model.LastName</span>
+        </div>
+        <div class="detail">
+            <label>Biography:</label>
+            <span>@Model.Biography</span>
+        </div>
+        <div class="detail">
+            <label>Age:</label>
+            <span>@Model.Age</span>
+        </div>
+        <div class="detail">
+            <label>Telephone Number:</label>
+            <span>@Model.TelephoneNumber</span>
+        </div>
+        <div class="detail">
+            <label>Address:</label>
+            <span>@Model.Address</span>
+        </div>
+    </div>
+</body>
+</html>

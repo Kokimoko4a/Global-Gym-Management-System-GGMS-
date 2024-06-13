@@ -1,5 +1,6 @@
 ﻿using GGMS.Models;
 using GGMS.Web.Infrastructure.Extensions;
+using GGMS.Web.ViewModels.Trainer;
 using GGMSServices.Data.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -10,17 +11,27 @@ namespace GGMS.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ITrainerService trainerService;
 
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ITrainerService trainerService)
         {
             _logger = logger;
+            this.trainerService = trainerService;
      
         }
 
-        public   IActionResult Index()
+        public IActionResult Index()
         {
             return View();
+        }
+
+        [HttpGet]
+        public IActionResult GetTrainers() 
+        {
+            AllTrainers allTrainers = trainerService.GetAllTrainers();
+
+            return View(allTrainers);
         }
 
         public IActionResult Privacy()

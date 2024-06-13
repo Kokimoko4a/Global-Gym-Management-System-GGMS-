@@ -1,0 +1,73 @@
+﻿@using GGMS.Web.ViewModels.Trainer;
+@model AllTrainers;
+
+@{
+    ViewData["Title"] = "Trainers List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .trainer-box {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .trainer-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .trainer-details {
+            color: #666;
+        }
+
+        .more-info-button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            .more-info-button:hover {
+                background-color: #45a049;
+            }
+    </style>
+</head>
+<body>
+    <h2>@ViewData["Title"]</h2>
+    <div class="container">
+        @foreach (var trainer in Model.Trainers)
+        {
+            <div class="trainer-box">
+                <div class="trainer-name">@trainer.FirstName @trainer.LastName</div>
+                <form>
+                    <button asp-controller="Trainer" asp-action="GetInfo" asp-method="get" asp-route-id="@trainer.Id" class="more-info-button">More Info</button>
+                </form>
+            </div>
+        }
+    </div>
+</body>
+</html>

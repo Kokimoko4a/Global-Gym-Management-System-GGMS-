@@ -5,7 +5,7 @@
 
     public interface ITrainerService
     {
-        public Task<bool> BecomeTrainer(TainerViewModel tainerViewModel, Guid Id);
+        public Task<bool> BecomeTrainer(TrainerFormModel trainerFormModel, Guid Id);
 
         public Task<bool> IsTrainer( Guid Id);
 
@@ -21,6 +21,9 @@
 
         public Task<FitnessProgramFormModel> GetProgramAsFormModel(Guid id);
 
+        public AllTrainers GetAllTrainers();
+
+        public Task<TrainerBigViewModel> GetTrainer(Guid id);
 
     }
 }

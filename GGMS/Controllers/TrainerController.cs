@@ -24,13 +24,23 @@
         }
 
         [HttpGet]
-        public IActionResult BecomeTrainer()
+        public async Task<IActionResult> BecomeTrainer()
         {
-            return View(new TainerViewModel());
+          
+
+            if (await trainerService.IsTrainer(Guid.Parse(User.GetClaimValue(ClaimTypes.NameIdentifier))))
+            {
+                
+              
+                TempData[WarningMessage] = "You are already a trainer!";
+                return RedirectToAction("Index", "Home");
+            }
+
+            return View(new TrainerFormModel());
         }
 
         [HttpPost]
-        public async Task<IActionResult> BecomeTrainer(TainerViewModel trainerViewModel)
+        public async Task<IActionResult> BecomeTrainer(TrainerFormModel trainerViewModel)
         {
             if (!ModelState.IsValid)
             {
@@ -129,9 +139,17 @@
 
             await trainerService.EditProgramAsync(formModel);
 
-            TempData[SuccessMessage] = $"Successfully edited program called {formModel.Title};";
+            TempData[SuccessMessage] = $"Successfully edited program called {formModel.Title}";
 
             return RedirectToAction("AllFitnessPrograms");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetInfo(Guid id)
+        {
+            return View(await trainerService.GetTrainer(Guid.Parse(User.GetClaimValue(ClaimTypes.NameIdentifier))));
+
+
         }
     }
 }

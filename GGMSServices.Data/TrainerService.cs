@@ -47,7 +47,7 @@
 
         }
 
-        public async Task<bool> BecomeTrainer(TainerViewModel trainerViewModel, Guid userId)
+        public async Task<bool> BecomeTrainer(TrainerFormModel trainerViewModel, Guid userId)
         {
             Trainer trainer = new Trainer();
 
@@ -81,6 +81,21 @@
             await data.SaveChangesAsync();
         }
 
+        public AllTrainers GetAllTrainers()
+        {
+            AllTrainers allTrainers = new AllTrainers();
+
+            allTrainers.Trainers = data.Users.Select(t => new TrainerSmallViewModel()
+            {
+                Id = t.Id,
+                FirstName = t.FirstName,
+                LastName = t.LastName
+            }).ToHashSet();
+
+
+            return allTrainers;
+        }
+
         public async Task<FitnessProgramFormModel> GetProgramAsFormModel(Guid id)
         {
             var program = await data.FitnessPrograms.FirstOrDefaultAsync(x => x.Id == id);
@@ -107,7 +122,27 @@
             fitnessProgramBIgViewModel.Id = id;
 
             return fitnessProgramBIgViewModel;
-               
+
+        }
+
+        public async Task<TrainerBigViewModel> GetTrainer(Guid id)
+        {
+            TrainerBigViewModel? trainerViewModel = await data.Users.Select(x => new TrainerBigViewModel()
+            {
+                TelephoneNumber = x.TelephoneNumber,
+                FirstName = x.FirstName,
+                LastName = x.LastName,
+                Address = x.Address,
+                Age = x.Age,
+                Id = id,
+            })!.FirstOrDefaultAsync(x => x.Id == id)!;
+
+
+            Trainer? trainer = await data.Trainers.FirstOrDefaultAsync(x => x.Id == id);
+
+            trainerViewModel!.Biography = trainer!.Biography;
+
+            return trainerViewModel;
         }
 
         public async Task<bool> IsTrainer(Guid id)

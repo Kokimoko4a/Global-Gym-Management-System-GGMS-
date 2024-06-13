@@ -146,7 +146,7 @@
             <nav class="navbar">
                 <ul>
                     <li><a href="@Url.Action("Index", "Home")"><i class="fas fa-search"></i><span>Explore Gyms</span></a></li>
-                    <li><a href="@Url.Action("Trainers", "Home")"><i class="fas fa-user-tie"></i><span>Explore Trainers</span></a></li>
+                    <li><a href="@Url.Action("GetTrainers", "Home")"><i class="fas fa-user-tie"></i><span>Explore Trainers</span></a></li>
 
                     @if (User.Identity.IsAuthenticated)
                     {
