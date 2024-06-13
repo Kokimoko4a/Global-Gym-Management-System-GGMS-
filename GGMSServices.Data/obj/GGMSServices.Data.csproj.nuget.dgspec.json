@@ -260,6 +260,9 @@
             "projectReferences": {
               "D:\\Kaloyan\\GGMS\\Global-Gym-Management-System-GGMS-\\GGMS.Common\\GGMS.Common.csproj": {
                 "projectPath": "D:\\Kaloyan\\GGMS\\Global-Gym-Management-System-GGMS-\\GGMS.Common\\GGMS.Common.csproj"
+              },
+              "D:\\Kaloyan\\GGMS\\Global-Gym-Management-System-GGMS-\\GGMS.Data.Models\\GGMS.Data.Models.csproj": {
+                "projectPath": "D:\\Kaloyan\\GGMS\\Global-Gym-Management-System-GGMS-\\GGMS.Data.Models\\GGMS.Data.Models.csproj"
               }
             }
           }

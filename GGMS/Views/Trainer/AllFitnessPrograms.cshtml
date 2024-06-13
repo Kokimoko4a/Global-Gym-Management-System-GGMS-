@@ -1,0 +1,76 @@
+﻿@using GGMS.Web.ViewModels.FitnessProgram;
+@model List<FitnessProgramSmallViewModel>;
+
+<style>
+    .btn {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .btn:hover {
+            background-color: #45a049; /* Darker Green */
+        }
+
+    .btn-delete {
+        background-color: #f44336; /* Red */
+    }
+
+        .btn-delete:hover {
+            background-color: #d32f2f; /* Darker Red */
+        }
+
+    .btn-edit {
+        background-color: #ffeb3b; /* Yellow */
+        color: black; /* Black text */
+    }
+
+        .btn-edit:hover {
+            background-color: #fbc02d; /* Darker Yellow */
+        }
+</style>
+
+<h1>Fitness Programs</h1>
+
+<div class="fitness-programs">
+    @foreach (var program in Model)
+    {
+        <div class="fitness-program">
+            <h2>@program.Title</h2>
+            <p>Issue Date: @program.IssueDate.ToString("MMMM dd, yyyy")</p>
+
+            <!-- View Details Form -->
+            <form asp-action="ViewProgram" asp-controller="Trainer" asp-route-id="@program.Id" method="get">
+                <button type="submit" class="btn">View Details</button>
+            </form>
+
+            <!-- Edit Program Form -->
+            <a asp-controller="Trainer" asp-action="EditProgram" asp-route-id="@program.Id" method="get">
+                <button type="submit" class="btn btn-edit">Edit</button>
+            </a>
+
+            <!-- Delete Program Button -->
+            <button type="button" class="btn btn-delete" onclick="confirmDelete('@program.Id')">Delete</button>
+        </div>
+    }
+</div>
+
+<script>
+    function confirmDelete(programId) {
+        if (confirm('Are you sure you want to delete this fitness program?')) {
+            var form = document.createElement('form');
+            form.method = 'post';
+            form.action = '/Trainer/DeleteProgram/' + programId;
+            document.body.appendChild(form);
+            form.submit();
+        }
+    }
+</script>

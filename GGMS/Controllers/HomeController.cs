@@ -1,6 +1,9 @@
 ﻿using GGMS.Models;
+using GGMS.Web.Infrastructure.Extensions;
+using GGMSServices.Data.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Security.Claims;
 
 namespace GGMS.Controllers
 {
@@ -8,12 +11,14 @@ namespace GGMS.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
+
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+     
         }
 
-        public IActionResult Index()
+        public   IActionResult Index()
         {
             return View();
         }

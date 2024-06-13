@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GGMS.Common\GGMS.Common.csproj" />
+    <ProjectReference Include="..\GGMS.Data.Models\GGMS.Data.Models.csproj" />
   </ItemGroup>
 
 </Project>

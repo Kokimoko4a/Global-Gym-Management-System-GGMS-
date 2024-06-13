@@ -13,7 +13,6 @@ namespace GGMS.Data.Models
         public Gym()
         {
             Id = Guid.NewGuid();
-            FitnessPrograms = new HashSet<FitnessProgram>();
             FitnessCards = new HashSet<FitnessCard>();
         }
 
@@ -36,8 +35,7 @@ namespace GGMS.Data.Models
         [ForeignKey(nameof(Owner))]
         public Guid OwnerId { get; set; }
 
-        [Required]
-        public ICollection<FitnessProgram> FitnessPrograms { get; set; }
+
 
         public ICollection<FitnessCard> FitnessCards { get; set; }
     }

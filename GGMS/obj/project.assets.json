@@ -1338,6 +1338,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "GGMSServices.Data": "1.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
         },
         "compile": {
@@ -1351,7 +1352,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "GGMS.Common": "1.0.0"
+          "GGMS.Common": "1.0.0",
+          "GGMS.Data.Models": "1.0.0"
         },
         "compile": {
           "bin/placeholder/GGMS.Web.ViewModels.dll": {}

@@ -13,7 +13,7 @@ namespace GGMS.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Gym> builder)
         {
-            builder.HasMany(x => x.FitnessPrograms)
+            builder.HasMany(x => x.FitnessCards)
                 .WithOne(x => x.Gym)
                 .HasForeignKey(x => x.GymId);
 
