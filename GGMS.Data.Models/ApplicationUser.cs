@@ -12,6 +12,7 @@
             Id = Guid.NewGuid();
             FitnessPrograms = new HashSet<UserFitnessProgram>();
             FitnessCards = new HashSet<FitnessCard>();
+            Requests = new HashSet<RequestToTrainer>();
         }
 
         public ICollection<UserFitnessProgram> FitnessPrograms { get; set; } = null!;
@@ -44,5 +45,7 @@
         [ForeignKey(nameof(Trainer))]
         
         public Guid? TrainerId { get; set; }
+
+        public ICollection<RequestToTrainer> Requests { get; set; }
     }
 }

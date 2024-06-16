@@ -145,11 +145,19 @@
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> GetInfo(Guid id)
         {
-            return View(await trainerService.GetTrainer(Guid.Parse(User.GetClaimValue(ClaimTypes.NameIdentifier))));
+            return View(await trainerService.GetTrainer(id));
 
 
+        }
+
+        [HttpPost]
+        public  IActionResult RequestBecomingClient(Guid id)
+        {
+             Console.WriteLine(  1111 );//Everything is OK
+            return NoContent();
         }
     }
 }

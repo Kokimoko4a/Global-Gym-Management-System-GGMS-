@@ -31,6 +31,8 @@ namespace GGMS.Data
 
         public DbSet<FitnessCard> FitnessCards { get; set; } = null!;
 
+        public DbSet<RequestToTrainer> RequestToTrainers { get; set; } = null!;
+
 
 
 

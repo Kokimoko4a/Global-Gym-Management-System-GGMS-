@@ -1,9 +1,11 @@
-﻿@using GGMS.Web.ViewModels.Trainer;
+﻿@using GGMS.Web.Infrastructure.Extensions
+@using GGMS.Web.ViewModels.Trainer;
+@using System.Security.Claims
 @model TrainerBigViewModel;
 
 @{
     ViewData["Title"] = "Trainer page";
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -19,62 +21,106 @@
         }
 
         .container {
-            background-color: #fff;
-            padding: 20px;
             margin: 0 auto;
-            max-width: 600px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
         }
 
         h2 {
             text-align: center;
-            color: #333;
+            color: #FFA500;
+            margin-bottom: 20px;
         }
 
-        .detail {
+        .card {
+            background-color: #000;
+            color: #FFA500;
+            padding: 15px;
+            border-radius: 8px;
             margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
-            .detail label {
+            .card label {
                 font-weight: bold;
-                display: block;
                 margin-bottom: 5px;
+                display: block;
             }
 
-            .detail span {
+            .card span {
                 display: block;
-                color: #666;
             }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+            .button-container button {
+                background-color: #FFA500;
+                color: #000;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+
+                .button-container button:hover {
+                    background-color: #cc8400;
+                }
     </style>
 </head>
 <body>
     <div class="container">
         <h2>@ViewData["Title"]</h2>
-        <div class="detail">
+        <div class="card">
             <label>First Name:</label>
             <span>@Model.FirstName</span>
         </div>
-        <div class="detail">
+        <div class="card">
             <label>Last Name:</label>
             <span>@Model.LastName</span>
         </div>
-        <div class="detail">
+        <div class="card">
             <label>Biography:</label>
             <span>@Model.Biography</span>
         </div>
-        <div class="detail">
+        <div class="card">
             <label>Age:</label>
             <span>@Model.Age</span>
         </div>
-        <div class="detail">
+        <div class="card">
             <label>Telephone Number:</label>
             <span>@Model.TelephoneNumber</span>
         </div>
-        <div class="detail">
+        <div class="card">
             <label>Address:</label>
             <span>@Model.Address</span>
         </div>
+        <div class="button-container">
+            <button id="btn">Become Client</button>
+            
+        </div>
     </div>
 </body>
+
+<script>
+
+    let btn = document.getElementById('btn').addEventListener('click', async () => {
+
+        let userId = '@Guid.Parse(User.GetClaimValue(ClaimTypes.NameIdentifier))';
+        let url = `https://localhost:7113/Trainer/RequestBecomingClient/${userId}`;
+
+
+        let response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+          
+        });
+
+    });
+
+</script>
 </html>

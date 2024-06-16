@@ -127,20 +127,22 @@
 
         public async Task<TrainerBigViewModel> GetTrainer(Guid id)
         {
-            TrainerBigViewModel? trainerViewModel = await data.Users.Select(x => new TrainerBigViewModel()
-            {
-                TelephoneNumber = x.TelephoneNumber,
-                FirstName = x.FirstName,
-                LastName = x.LastName,
-                Address = x.Address,
-                Age = x.Age,
-                Id = id,
-            })!.FirstOrDefaultAsync(x => x.Id == id)!;
-
+            ApplicationUser? user = await data.Users.FirstOrDefaultAsync(x => x.Id == id);
 
             Trainer? trainer = await data.Trainers.FirstOrDefaultAsync(x => x.Id == id);
 
-            trainerViewModel!.Biography = trainer!.Biography;
+            TrainerBigViewModel trainerViewModel = new TrainerBigViewModel() 
+            {
+                Id = id,
+                Address = user.Address,
+                Age = user.Age,
+                Biography = trainer.Biography,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                TelephoneNumber = user.TelephoneNumber
+            };
+
+           
 
             return trainerViewModel;
         }

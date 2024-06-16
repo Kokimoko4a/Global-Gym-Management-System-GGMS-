@@ -10,6 +10,7 @@
         {
             FitnessPrograms = new HashSet<FitnessProgram>();
             Clients = new HashSet<ApplicationUser>();
+            Requests = new HashSet<RequestToTrainer>();
         }
 
         [Key]
@@ -23,5 +24,7 @@
         [Required]
         [StringLength(BioghraphyMaxLength , MinimumLength = BioghraphyMinLength)]
         public string Biography { get; set; } = null!;
+
+        public ICollection<RequestToTrainer> Requests { get; set; }
     }
 }
