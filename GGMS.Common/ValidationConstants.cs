@@ -61,5 +61,14 @@
 
             public const int BioghraphyMinLength = 20;
         }
+
+        public static class RequestToTrainer
+        {
+            public const int DescriptionMaxLength = 256;
+
+            public const int DescriptionMinLength = 10;
+
+     
+        }
     }
 }

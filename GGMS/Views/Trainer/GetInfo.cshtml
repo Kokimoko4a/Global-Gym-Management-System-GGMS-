@@ -98,29 +98,15 @@
             <span>@Model.Address</span>
         </div>
         <div class="button-container">
-            <button id="btn">Become Client</button>
+            <form asp-action="RequestBecomingClient" asp-controller="Trainer" asp-route-id="@Model.Id" method="get">
+
+                <button id="btn">Become Client</button>
+
+            </form>
+          
             
         </div>
     </div>
 </body>
 
-<script>
-
-    let btn = document.getElementById('btn').addEventListener('click', async () => {
-
-        let userId = '@Guid.Parse(User.GetClaimValue(ClaimTypes.NameIdentifier))';
-        let url = `https://localhost:7113/Trainer/RequestBecomingClient/${userId}`;
-
-
-        let response = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-          
-        });
-
-    });
-
-</script>
 </html>

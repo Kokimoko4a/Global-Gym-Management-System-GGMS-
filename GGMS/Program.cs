@@ -5,6 +5,7 @@ using GGMSServices.Data.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace GGMS
 {
     public class Program
@@ -24,9 +25,11 @@ namespace GGMS
 
              builder.Services.AddApplicationServices(typeof(ITrainerService));
 
-
+          
 
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddSignalR();
 
             var app = builder.Build();
 
@@ -54,6 +57,7 @@ namespace GGMS
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
             app.MapRazorPages();
+            app.MapHub<ChatHub>("/chathub");
 
             app.Run();
         }

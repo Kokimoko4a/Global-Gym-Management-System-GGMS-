@@ -1,7 +1,9 @@
 ﻿namespace GGMSServices.Data.Interfaces
 {
     using GGMS.Web.ViewModels.FitnessProgram;
+    using GGMS.Web.ViewModels.RequestToTrainer;
     using GGMS.Web.ViewModels.Trainer;
+    using GGMS.Data.Models;
 
     public interface ITrainerService
     {
@@ -24,6 +26,10 @@
         public AllTrainers GetAllTrainers();
 
         public Task<TrainerBigViewModel> GetTrainer(Guid id);
+
+        public RequestToTrainerFormModel CreateRequestFormModel(Guid idOfClient, Guid idOfTrainer);
+
+        public Task<RequestToTrainer> MakeRequestToTrainer(Guid trainerId, Guid userId, string message);
 
     }
 }

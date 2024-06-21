@@ -1,0 +1,13 @@
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Web.SpecialModels\bin\Debug\net6.0\GGMS.Web.SpecialModels.deps.json
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Web.SpecialModels\bin\Debug\net6.0\GGMS.Web.SpecialModels.dll
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Web.SpecialModels\bin\Debug\net6.0\GGMS.Web.SpecialModels.pdb
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Web.SpecialModels\obj\Debug\net6.0\GGMS.Web.SpecialModels.csproj.AssemblyReference.cache
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Web.SpecialModels\obj\Debug\net6.0\GGMS.Web.SpecialModels.GeneratedMSBuildEditorConfig.editorconfig
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Web.SpecialModels\obj\Debug\net6.0\GGMS.Web.SpecialModels.AssemblyInfoInputs.cache
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Web.SpecialModels\obj\Debug\net6.0\GGMS.Web.SpecialModels.AssemblyInfo.cs
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Web.SpecialModels\obj\Debug\net6.0\GGMS.Web.SpecialModels.csproj.CoreCompileInputs.cache
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Web.SpecialModels\obj\Debug\net6.0\GGMS.Web.SpecialModels.sourcelink.json
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Web.SpecialModels\obj\Debug\net6.0\GGMS.Web.SpecialModels.dll
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Web.SpecialModels\obj\Debug\net6.0\refint\GGMS.Web.SpecialModels.dll
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Web.SpecialModels\obj\Debug\net6.0\GGMS.Web.SpecialModels.pdb
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Web.SpecialModels\obj\Debug\net6.0\ref\GGMS.Web.SpecialModels.dll

@@ -1,0 +1,80 @@
+﻿@using GGMS.Web.ViewModels.RequestToTrainer;
+@model RequestToTrainerFormModel;
+
+
+@{
+    ViewData["Title"] = "Send to Trainer";
+}
+
+<section>
+    <h2>Send a Message to Your Trainer</h2>
+    <form id="messageForm" method="post">
+        <div class="form-group">
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send to Trainer</button>
+    </form>
+</section>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.11/signalr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.11/signalr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.11/signalr.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            const connection = new signalR.HubConnectionBuilder()
+                .withUrl("/chathub")
+                .build();
+
+            connection.start().catch(err => console.error(err.toString()));
+
+            $('form').on('submit', function (e) {
+                e.preventDefault();
+
+                var message = $('#message').val();
+                var trainerId = '@Model.IdOfTrainer'; // Assuming TrainerId is available in your Razor model
+                var senderId = '@User.Identity.Name'; // Assuming sender ID or username
+
+                if (message.trim() === '') {
+                    toastr.error('Please enter a message.');
+                    return;
+                }
+
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("SendToTrainer", "Trainer")',
+                    data: {
+                        message: message,
+                        trainerId: trainerId
+                    },
+                    success: function (response) {
+                        if (response.success) {
+                            toastr.success('Message sent successfully!');
+                            connection.invoke("SendMessageToUser", trainerId, message, senderId)
+                                .catch(err => console.error(err.toString()));
+                            $('#message').val(''); // Clear the message textarea
+                        } else {
+                            toastr.error(response.error || 'An error occurred while sending the message.');
+                        }
+                    },
+                    error: function () {
+                        toastr.error('An error occurred while sending the message.');
+                    }
+                });
+            });
+
+            // Receive message and notify the trainer
+            connection.on("ReceiveMessage", function (user, message, senderId) {
+                var currentUser = '@User.Identity.Name'; // Assuming current user ID or username
+
+                if (user !== currentUser) { // Only show notification if the user is not the sender
+                    toastr.info(`New message from ${user}: ${message}`);
+                }
+            });
+        });
+    </script>
+
+
+
+}

@@ -26,12 +26,12 @@
         [HttpGet]
         public async Task<IActionResult> BecomeTrainer()
         {
-          
+
 
             if (await trainerService.IsTrainer(Guid.Parse(User.GetClaimValue(ClaimTypes.NameIdentifier))))
             {
-                
-              
+
+
                 TempData[WarningMessage] = "You are already a trainer!";
                 return RedirectToAction("Index", "Home");
             }
@@ -95,7 +95,7 @@
         }
 
         [HttpGet]
-        public async Task<IActionResult> AllFitnessPrograms() 
+        public async Task<IActionResult> AllFitnessPrograms()
         {
             return View(await trainerService.AllProgramsAsync(Guid.Parse(User.GetClaimValue(ClaimTypes.NameIdentifier))));
 
@@ -131,7 +131,7 @@
         {
             if (!ModelState.IsValid)
             {
-                
+
                 return View(formModel);
             }
 
@@ -153,11 +153,29 @@
 
         }
 
-        [HttpPost]
-        public  IActionResult RequestBecomingClient(Guid id)
+        [HttpGet]
+        public IActionResult RequestBecomingClient(Guid id)
         {
-             Console.WriteLine(  1111 );//Everything is OK
-            return NoContent();
+            Guid idOfClient = Guid.Parse(User.GetClaimValue(ClaimTypes.NameIdentifier));
+
+            return View(trainerService.CreateRequestFormModel(idOfClient,id));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> SendToTrainer(string message, string trainerId) 
+        {
+            if (string.IsNullOrWhiteSpace(message))
+            {
+                return Json(new { success = false, error = "Message cannot be empty" });
+            }
+
+            Guid trainerIdGuid = Guid.Parse(trainerId);
+            Guid userId = Guid.Parse(User.GetClaimValue(ClaimTypes.NameIdentifier));
+
+            await trainerService.MakeRequestToTrainer(trainerIdGuid, userId, message);
+
+
+            return Json(new { success = true });
         }
     }
 }

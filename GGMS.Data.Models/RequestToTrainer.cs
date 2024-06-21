@@ -1,8 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
+﻿
 namespace GGMS.Data.Models
 {
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using static GGMS.Common.ValidationConstants.RequestToTrainer;
+
     public class RequestToTrainer
     {
         public RequestToTrainer()
@@ -24,5 +26,9 @@ namespace GGMS.Data.Models
         public ApplicationUser Client { get; set; } = null!;
 
         public bool IsApproved { get; set; }
+
+        [Required]
+        [StringLength(DescriptionMaxLength,MinimumLength = DescriptionMinLength)]
+        public string DecriptionOfRequest { get; set; }
     }
 }

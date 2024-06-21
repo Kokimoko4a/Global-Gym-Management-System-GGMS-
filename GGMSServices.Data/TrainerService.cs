@@ -1,8 +1,10 @@
 ﻿namespace GGMSServices.Data
 {
+    using GGMS.Common;
     using GGMS.Data;
     using GGMS.Data.Models;
     using GGMS.Web.ViewModels.FitnessProgram;
+    using GGMS.Web.ViewModels.RequestToTrainer;
     using GGMS.Web.ViewModels.Trainer;
     using GGMSServices.Data.Interfaces;
     using Microsoft.EntityFrameworkCore;
@@ -62,6 +64,16 @@
             return true;
         }
 
+        public RequestToTrainerFormModel CreateRequestFormModel(Guid idOfClient, Guid idOfTrainer)
+        {
+            RequestToTrainerFormModel model = new RequestToTrainerFormModel();
+            model.IdOfClient = idOfClient;
+            model.IdOfTrainer = idOfTrainer;
+            model.IsApproved = false;
+
+            return model;
+        }
+
         public async Task DeleteProgramAsync(Guid id)
         {
             var program = await data.FitnessPrograms.FirstOrDefaultAsync(x => x.Id == id);
@@ -85,12 +97,16 @@
         {
             AllTrainers allTrainers = new AllTrainers();
 
-            allTrainers.Trainers = data.Users.Select(t => new TrainerSmallViewModel()
+            allTrainers.Trainers = data.Trainers.Select(t => new TrainerSmallViewModel()
             {
                 Id = t.Id,
-                FirstName = t.FirstName,
-                LastName = t.LastName
             }).ToHashSet();
+
+            foreach (var trainer in allTrainers.Trainers)
+            { 
+                trainer.FirstName = data.Users.First(x => x.Id == trainer.Id).FirstName;
+                trainer.LastName = data.Users.First(x => x.Id == trainer.Id).LastName;
+            }
 
 
             return allTrainers;
@@ -153,5 +169,22 @@
 
             return result;
         }
+
+        public async Task<RequestToTrainer> MakeRequestToTrainer(Guid trainerId, Guid userId, string message)
+        {
+            RequestToTrainer requestToTrainer = new RequestToTrainer();
+
+            requestToTrainer.IdOfTrainer = trainerId;
+            requestToTrainer.IdOfClient = userId;
+            requestToTrainer.DecriptionOfRequest = message;
+
+            await data.AddAsync(requestToTrainer);
+
+            await data.SaveChangesAsync();
+            
+            return requestToTrainer;
+        }
+
+      
     }
 }

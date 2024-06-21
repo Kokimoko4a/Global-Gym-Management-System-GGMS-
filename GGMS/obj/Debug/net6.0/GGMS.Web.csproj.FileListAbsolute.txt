@@ -88,3 +88,7 @@ D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS\bin\Debug\net6.0\GGMS.We
 D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS\bin\Debug\net6.0\GGMSServices.Data.dll
 D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS\bin\Debug\net6.0\GGMS.Web.Infrastructure.pdb
 D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS\bin\Debug\net6.0\GGMSServices.Data.pdb
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS\bin\Debug\net6.0\System.Net.WebSockets.WebSocketProtocol.dll
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS\bin\Debug\net6.0\GGMS.Web.SpecialModels.dll
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS\bin\Debug\net6.0\GGMS.Web.SpecialModels.pdb
