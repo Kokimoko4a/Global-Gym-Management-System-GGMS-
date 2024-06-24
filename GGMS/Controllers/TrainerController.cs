@@ -147,7 +147,7 @@
         [HttpGet]
         [AllowAnonymous]
         public async Task<IActionResult> GetInfo(Guid id)
-        {
+       {
             return View(await trainerService.GetTrainer(id));
 
 

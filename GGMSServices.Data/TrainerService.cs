@@ -145,7 +145,7 @@
         {
             ApplicationUser? user = await data.Users.FirstOrDefaultAsync(x => x.Id == id);
 
-            Trainer? trainer = await data.Trainers.FirstOrDefaultAsync(x => x.Id == id);
+            Trainer? trainer = await data.Trainers.Include(x => x.Comments).FirstOrDefaultAsync(x => x.Id == id);
 
             TrainerBigViewModel trainerViewModel = new TrainerBigViewModel() 
             {
@@ -155,7 +155,8 @@
                 Biography = trainer.Biography,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
-                TelephoneNumber = user.TelephoneNumber
+                TelephoneNumber = user.TelephoneNumber,
+                Comments = trainer.Comments,
             };
 
            

@@ -3,7 +3,6 @@
 @using static GGMS.Web.Infrastructure.Extensions.WebApplicationBuilderExtensions;
 @inject GGMSServices.Data.Interfaces.ITrainerService trainerService;
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -157,8 +156,12 @@
                             <li><a href="@Url.Action("MyClients", "Trainer")"><i class="fas fa-users"></i><span>My Clients</span></a></li>
                             <li><a href="@Url.Action("CreateProgram", "Trainer")"><i class="fas fa-dumbbell"></i><span>Create Program</span></a></li>
                             <li><a href="@Url.Action("AllFitnessPrograms", "Trainer")"><i class="fas fa-th-list"></i><span>My programs</span></a></li>
+                            <li><a href="@Url.Action("GetAllRequests", "Request")"><i class="fas fa-envelope"></i><span>Requests</span></a></li>
                         }
                     }
+
+                    <!-- New Requests item -->
+                   
                 </ul>
             </nav>
             <main class="main-content">
@@ -203,7 +206,6 @@
                 });
             });
         </script>
-
 
         <script src="~/js/site.js" asp-append-version="true"></script>
         @await RenderSectionAsync("Scripts", required: false)

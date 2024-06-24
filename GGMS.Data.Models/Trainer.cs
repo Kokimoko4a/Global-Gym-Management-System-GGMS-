@@ -11,6 +11,7 @@
             FitnessPrograms = new HashSet<FitnessProgram>();
             Clients = new HashSet<ApplicationUser>();
             Requests = new HashSet<RequestToTrainer>();
+            Comments = new HashSet<CommentTrainer>();
         }
 
         [Key]
@@ -26,5 +27,7 @@
         public string Biography { get; set; } = null!;
 
         public ICollection<RequestToTrainer> Requests { get; set; }
+
+        public ICollection<CommentTrainer> Comments { get; set; } = null!;
     }
 }

@@ -33,6 +33,12 @@ namespace GGMS.Data
 
         public DbSet<RequestToTrainer> RequestToTrainers { get; set; } = null!;
 
+        public DbSet<CommentTrainer> CommentTrainers { get; set; } = null!;
+
+        public DbSet<LikeCommentTrainer> LikeCommentTrainers { get; set; } = null!;
+
+        public DbSet<DislikeCommentTrainer> DislikeCommentTrainers { get; set; } = null!;
+
 
 
 

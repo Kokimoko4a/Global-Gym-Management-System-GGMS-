@@ -70,5 +70,16 @@
 
      
         }
+
+        public class CommentTrainer
+        { 
+            public const int TitleMaxLength = 20;
+
+            public const int TitleMinLength = 3;
+
+            public const int TextMaxLength = 128;
+
+            public const int TextMinLength = 10;
+        }
     }
 }

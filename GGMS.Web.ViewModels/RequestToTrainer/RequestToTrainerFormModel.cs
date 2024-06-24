@@ -12,8 +12,6 @@ namespace GGMS.Web.ViewModels.RequestToTrainer
 
         public bool IsApproved { get; set; }
 
-        [Required]
-        [StringLength(DescriptionMaxLength, MinimumLength = DescriptionMinLength)]
         public string DecriptionOfRequest { get; set; } = null!;
     }
 }

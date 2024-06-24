@@ -13,6 +13,8 @@
             FitnessPrograms = new HashSet<UserFitnessProgram>();
             FitnessCards = new HashSet<FitnessCard>();
             Requests = new HashSet<RequestToTrainer>();
+            Likes = new HashSet<LikeCommentTrainer>();
+            DisLikes = new HashSet<DislikeCommentTrainer>();
         }
 
         public ICollection<UserFitnessProgram> FitnessPrograms { get; set; } = null!;
@@ -47,5 +49,9 @@
         public Guid? TrainerId { get; set; }
 
         public ICollection<RequestToTrainer> Requests { get; set; }
+
+        public ICollection<LikeCommentTrainer> Likes { get; set; } = null!;
+
+        public ICollection<DislikeCommentTrainer> DisLikes { get; set; } = null!;
     }
 }
