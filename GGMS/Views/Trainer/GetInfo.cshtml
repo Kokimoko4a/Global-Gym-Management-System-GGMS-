@@ -160,8 +160,10 @@
                 {
                     foreach (var comment in Model.Comments.OrderByDescending(x => x.CreatedOn))
                     {
+                        string author = comment.Author.FirstName + " " + @comment.Author.LastName;
+
                         <div class="comment">
-                            <label>@comment.Author.FirstName</label>
+                            <label>@author</label>
                             <span>@comment.Text</span>
                         </div>
                     }
