@@ -6,6 +6,7 @@
 @{
     ViewData["Title"] = "Trainer page";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    Guid idOfTrainer = Model.Id;
 }
 
 <!DOCTYPE html>
@@ -162,9 +163,12 @@
                     {
                         string author = comment.Author.FirstName + " " + @comment.Author.LastName;
 
-                        <div class="comment">
+                        
+                        <div class="comment" data-comment-id="@comment.Id">
                             <label>@author</label>
                             <span>@comment.Text</span>
+                            <button class="like-button" onclick="likeComment('@comment.Id')">👍</button>
+                            <p id="likes">@comment.Likes.Count</p>
                         </div>
                     }
                 }
@@ -184,6 +188,9 @@
 </body>
 
 <script>
+
+    //adding comment logic
+
     document.getElementById("AddComment").addEventListener("click", async (event) => {
         event.preventDefault();
 
@@ -235,6 +242,63 @@
             console.error("Failed to add comment", error);
         }
     });
+
+
+
+    //liking comment logic
+
+    async function likeComment(commentId) {
+        try {
+            const response = await fetch("https://localhost:7113/Comment/LikeComment", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    CommentId: commentId
+                   
+                })
+            });
+
+          
+
+            if (!response.ok) {
+
+              
+
+                        throw new Error('Failed to like comment');
+                      
+            }
+
+            else {
+
+                let likes = document.getElementById('likes');
+
+            
+                let count = await response.json();
+
+                if (count == 0) {
+
+                    alert("You have already liked the comment!");
+
+                }
+
+                else 
+                {
+                    likes.textContent++;
+                }
+
+               
+            }
+
+            // You can add further functionality to update the like count in the UI, if needed
+        } catch (error) {
+            console.error("Failed to like comment", error);
+        }
+    }
+
+
+
 </script>
 
 </html>

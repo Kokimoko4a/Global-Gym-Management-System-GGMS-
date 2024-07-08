@@ -1,12 +1,13 @@
-﻿using GGMS.Web.Infrastructure.Extensions;
-using GGMSServices.Data.Interfaces;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Security.Claims;
-using System.Threading.Tasks;
-
-namespace GGMS.Web.Controllers
+﻿namespace GGMS.Web.Controllers
 {
+    using GGMS.Web.Infrastructure.Extensions;
+    using GGMSServices.Data.Interfaces;
+    using Microsoft.AspNetCore.Mvc;
+    using System;
+    using System.Security.Claims;
+    using System.Threading.Tasks;
+    using static GGMS.Common.NotificationMessagesConstants;
+
     public class CommentController : Controller
     {
         private readonly ICommentService commentService;
@@ -17,7 +18,7 @@ namespace GGMS.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddComment([FromBody] AddCommentModel model)
+        public async Task<IActionResult> AddComment([FromBody] AddCommentTrainerFormModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -57,7 +58,37 @@ namespace GGMS.Web.Controllers
             }
         }
 
-        public class AddCommentModel
+        [HttpPost]
+        public async Task<IActionResult> LikeComment( [FromBody] LikeCommentTrainer model) 
+        {
+          
+
+            if (ModelState.IsValid)
+            {
+                Guid userId = Guid.Parse(User.GetClaimValue(ClaimTypes.NameIdentifier));
+                Guid commentId = Guid.Parse(model.CommentId);
+
+                int likes = await commentService.LikeComment(userId,commentId);
+
+
+                return Json(likes);
+            }
+
+            
+
+            return BadRequest();
+        }
+
+
+
+        public class LikeCommentTrainer
+        {
+            public string CommentId { get; set; }
+
+           
+        }
+
+        public class AddCommentTrainerFormModel
         {
             public string TrainerId { get; set; }
             public string Content { get; set; }
