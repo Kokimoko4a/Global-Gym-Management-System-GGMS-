@@ -282,7 +282,7 @@
               "RelativeDocumentMoniker": "Controllers\\CommentController.cs",
               "ToolTip": "D:\\Kaloyan\\GGMS\\Global-Gym-Management-System-GGMS-\\GGMS\\Controllers\\CommentController.cs",
               "RelativeToolTip": "Controllers\\CommentController.cs",
-              "ViewState": "AQIAADUAAAAAAAAAAAAewE4AAAAgAAAA",
+              "ViewState": "AQIAABQAAAAAAAAAAAAuwE4AAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-24T11:27:51.678Z",
               "EditorCaption": ""
@@ -297,8 +297,7 @@
               "RelativeToolTip": "..\\GGMSServices.Data\\TrainerService.cs",
               "ViewState": "AQIAAIEAAAAAAAAAAAAwwJEAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T15:55:49.003Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-28T15:55:49.003Z"
             },
             {
               "$type": "Document",
@@ -308,7 +307,7 @@
               "RelativeDocumentMoniker": "Views\\Trainer\\GetInfo.cshtml",
               "ToolTip": "D:\\Kaloyan\\GGMS\\Global-Gym-Management-System-GGMS-\\GGMS\\Views\\Trainer\\GetInfo.cshtml",
               "RelativeToolTip": "Views\\Trainer\\GetInfo.cshtml",
-              "ViewState": "AQIAAAMBAAAAAAAAAAAAABsBAAARAAAA",
+              "ViewState": "AQIAAMMAAAAAAAAAAAAAANUAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-06-13T15:52:27.822Z",
               "EditorCaption": ""
@@ -323,8 +322,7 @@
               "RelativeToolTip": "Controllers\\HomeController.cs",
               "ViewState": "AQIAAA0AAAAAAAAAAAAiwB8AAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T18:24:21.506Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-21T18:24:21.506Z"
             },
             {
               "$type": "Document",
@@ -348,8 +346,7 @@
               "RelativeToolTip": "Controllers\\TrainerController.cs",
               "ViewState": "AQIAAIMAAAAAAAAAAAAAAJkAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T18:12:15.968Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-30T18:12:15.968Z"
             },
             {
               "$type": "Document",
@@ -361,8 +358,7 @@
               "RelativeToolTip": "..\\GGMS.Web.SpecialModels\\ChatHub.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-19T11:29:45.041Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-19T11:29:45.041Z"
             },
             {
               "$type": "Document",
@@ -374,8 +370,7 @@
               "RelativeToolTip": "..\\GGMSServices.Data\\CommentService.cs",
               "ViewState": "AQIAADYAAAAAAAAAAAAAwFMAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-24T11:29:42.919Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-24T11:29:42.919Z"
             },
             {
               "$type": "Document",
@@ -387,8 +382,7 @@
               "RelativeToolTip": "..\\GGMS.Data.Models\\ApplicationUser.cs",
               "ViewState": "AQIAAAEAAAAAAAAAAAAiwBMAAABPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-18T15:24:51.841Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-18T15:24:51.841Z"
             },
             {
               "$type": "Document",
@@ -400,8 +394,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AQIAAAEAAAAAAAAAAAAiwBMAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-01T18:39:41.336Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-01T18:39:41.336Z"
             },
             {
               "$type": "Document",
@@ -413,8 +406,7 @@
               "RelativeToolTip": "Views\\Trainer\\CreateProgram.cshtml",
               "ViewState": "AQIAABsAAAAAAAAAAADwvzMAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-02T08:58:56.706Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-02T08:58:56.706Z"
             },
             {
               "$type": "Document",
@@ -426,8 +418,7 @@
               "RelativeToolTip": "..\\GGMSServices.Data\\Interfaces\\ICommentService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-24T11:28:25.097Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-24T11:28:25.097Z"
             },
             {
               "$type": "Document",
@@ -439,8 +430,7 @@
               "RelativeToolTip": "..\\GGMS.Data.Models\\CommentTrainer.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-24T10:43:10.53Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-24T10:43:10.53Z"
             },
             {
               "$type": "Document",
