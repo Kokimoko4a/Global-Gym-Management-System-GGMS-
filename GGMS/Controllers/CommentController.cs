@@ -70,6 +70,7 @@
 
                 int likes = await commentService.LikeComment(userId,commentId);
 
+                Console.WriteLine(likes);
 
                 return Json(likes);
             }

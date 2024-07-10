@@ -103,7 +103,7 @@
             }).ToHashSet();
 
             foreach (var trainer in allTrainers.Trainers)
-            { 
+            {
                 trainer.FirstName = data.Users.First(x => x.Id == trainer.Id).FirstName;
                 trainer.LastName = data.Users.First(x => x.Id == trainer.Id).LastName;
             }
@@ -145,9 +145,18 @@
         {
             ApplicationUser? user = await data.Users.FirstOrDefaultAsync(x => x.Id == id);
 
-            Trainer? trainer = await data.Trainers.Include(x => x.Comments).ThenInclude(c => c.Author).ThenInclude(x => x.Likes).FirstOrDefaultAsync(x => x.Id == id);
 
-            TrainerBigViewModel trainerViewModel = new TrainerBigViewModel() 
+
+            Trainer? trainer = await data.Trainers
+                .Include(x => x.Comments)
+                    .ThenInclude(c => c.Author)
+                .Include(x => x.Comments)
+                    .ThenInclude(c => c.Likes)
+                .FirstOrDefaultAsync(x => x.Id == id);
+
+
+
+            TrainerBigViewModel trainerViewModel = new TrainerBigViewModel()
             {
                 Id = id,
                 Address = user.Address,
@@ -158,8 +167,6 @@
                 TelephoneNumber = user.TelephoneNumber,
                 Comments = trainer.Comments,
             };
-
-           
 
             return trainerViewModel;
         }
@@ -182,10 +189,10 @@
             await data.AddAsync(requestToTrainer);
 
             await data.SaveChangesAsync();
-            
+
             return requestToTrainer;
         }
 
-      
+
     }
 }

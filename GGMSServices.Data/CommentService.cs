@@ -42,7 +42,7 @@
 
         public ICollection<CommentTrainer> GetCommentsForTrainer(Guid trainerId)
         {
-            return  data.CommentTrainers.Where(x => x.IdOfTrainer == trainerId).Include(x => x.Author).ToHashSet();
+            return  data.CommentTrainers.Where(x => x.IdOfTrainer == trainerId).Include(x => x.Author).Include(x => x.Likes).ToHashSet();
         }
 
         public async Task<Guid> GetTrainerByComment(Guid commentId)
@@ -56,7 +56,7 @@
         {
             var user = await data.Users.FirstOrDefaultAsync(x => x.Id == userId);
 
-            CommentTrainer commentTrainer = await data.CommentTrainers.FirstOrDefaultAsync(c => c.Id == commentId)!;
+            CommentTrainer commentTrainer = await data.CommentTrainers.Include(x => x.Likes).FirstOrDefaultAsync(c => c.Id == commentId)!;
 
             var likeExists = await data.LikeCommentTrainers.FirstOrDefaultAsync(x => x.UserId == userId && x.CommentId == commentId);
 
@@ -78,6 +78,8 @@
             commentTrainer!.Likes.Add(likeCommentTrainer);
 
             await data.SaveChangesAsync();
+
+         
 
             return commentTrainer.Likes.Count;  
             
