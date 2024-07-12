@@ -1,6 +1,5 @@
 ﻿namespace GGMSServices.Data
 {
-    using GGMS.Common;
     using GGMS.Data;
     using GGMS.Data.Models;
     using GGMS.Web.ViewModels.FitnessProgram;
@@ -93,6 +92,13 @@
             await data.SaveChangesAsync();
         }
 
+        public async Task<IEnumerable<ApplicationUser>> GetAllClients(Guid id)
+        {
+            Trainer trainer = await data.Trainers.Include(x => x.Clients).FirstOrDefaultAsync(x => x.Id == id)!;
+
+            return trainer!.Clients;
+        }
+
         public AllTrainers GetAllTrainers()
         {
             AllTrainers allTrainers = new AllTrainers();
@@ -139,6 +145,11 @@
 
             return fitnessProgramBIgViewModel;
 
+        }
+
+        public async Task<ApplicationUser> GetSingleUserDataAsync(Guid id)
+        {
+            return await data.Users.FirstOrDefaultAsync(x => x.Id == id)!;
         }
 
         public async Task<TrainerBigViewModel> GetTrainer(Guid id)

@@ -147,7 +147,7 @@
         [HttpGet]
         [AllowAnonymous]
         public async Task<IActionResult> GetInfo(Guid id)
-       {
+        {
             return View(await trainerService.GetTrainer(id));
 
 
@@ -158,11 +158,11 @@
         {
             Guid idOfClient = Guid.Parse(User.GetClaimValue(ClaimTypes.NameIdentifier));
 
-            return View(trainerService.CreateRequestFormModel(idOfClient,id));
+            return View(trainerService.CreateRequestFormModel(idOfClient, id));
         }
 
         [HttpPost]
-        public async Task<IActionResult> SendToTrainer(string message, string trainerId) 
+        public async Task<IActionResult> SendToTrainer(string message, string trainerId)
         {
             if (string.IsNullOrWhiteSpace(message))
             {
@@ -176,6 +176,40 @@
 
 
             return Json(new { success = true });
+        }
+
+        public async Task<IActionResult> MyClients()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                Guid idTrainer = Guid.Parse(User.GetClaimValue(ClaimTypes.NameIdentifier));
+
+                if (await trainerService.IsTrainer(idTrainer))
+                {
+                    return View(await trainerService.GetAllClients(idTrainer));
+                }
+
+                return BadRequest();
+            }
+
+            return BadRequest();
+        }
+
+        public async Task<IActionResult> GetUserData(Guid id)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                Guid idTrainer = Guid.Parse(User.GetClaimValue(ClaimTypes.NameIdentifier));
+
+                if (await trainerService.IsTrainer(idTrainer))
+                {
+                    return View(await trainerService.GetSingleUserDataAsync(id));
+                }
+
+                return BadRequest();
+            }
+
+            return BadRequest();
         }
     }
 }

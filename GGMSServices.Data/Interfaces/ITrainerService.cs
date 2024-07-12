@@ -31,5 +31,9 @@
 
         public Task<RequestToTrainer> MakeRequestToTrainer(Guid trainerId, Guid userId, string message);
 
+        public Task<IEnumerable<ApplicationUser>> GetAllClients(Guid id);
+
+        public Task<ApplicationUser> GetSingleUserDataAsync(Guid id);
+
     }
 }
