@@ -23,7 +23,26 @@ namespace GGMS.Web.Controllers
             {
                 Guid id = Guid.Parse(User.GetClaimValue(ClaimTypes.NameIdentifier));
 
-                return View(requestService.GetAllRequests(id));
+                return View(requestService.GetAllRequestsForTrainer(id));
+            }
+
+            return RedirectToAction("Login", "User");
+        }
+
+        public async Task<IActionResult> ApproveRequest(Guid id)
+        {     
+            if (User.Identity.IsAuthenticated)
+            {
+             
+
+                if (await requestService.RequestExists(id))
+                {
+                    await requestService.ApproveRequest(id);
+
+                    return RedirectToAction("GetAllRequests", "Request");
+                }
+
+                return BadRequest();
             }
 
             return RedirectToAction("Login", "User");

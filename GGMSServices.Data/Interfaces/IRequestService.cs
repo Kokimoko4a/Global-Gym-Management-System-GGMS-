@@ -10,6 +10,12 @@ namespace GGMSServices.Data.Interfaces
 {
     public interface IRequestService
     {
-        public IEnumerable<RequestToTrainerViewModelSmall> GetAllRequests(Guid id);
+        public IEnumerable<RequestToTrainerViewModelSmall> GetAllRequestsForTrainer(Guid id);
+
+        public IEnumerable<RequestToTrainerViewModelSmall> GetAllRequestsForUser(Guid id);
+
+        public Task ApproveRequest(Guid id);
+
+        public Task<bool> RequestExists(Guid id);
     }
 }

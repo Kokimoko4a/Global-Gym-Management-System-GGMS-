@@ -2,54 +2,85 @@
 
 @{
     ViewData["Title"] = "Requests to Trainer";
+}
+
+<style>
+    /* Additional styles specific to this view can be added here */
+    .request-card {
+        margin-bottom: 20px;
+        background: #333;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        border: solid white 1px;
     }
 
-
-
- <style>
-        /* Additional styles specific to this view can be added here */
-        .request-card {
-            margin-bottom: 20px;
-            background: #333;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-            border: solid white 1px;
+        .request-card .field {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start; /* Allows items to align to the top */
         }
 
-            .request-card .field {
-                margin-bottom: 10px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
+            .request-card .field label {
+                color: white;
+                font-weight: bold;
+                margin-right: 10px; /* Adds space between label and description */
             }
 
-                .request-card .field label {
-                    color: white;
-                    font-weight: bold;
-                }
+            .request-card .field span {
+                color: #ddd;
+                flex-grow: 1; /* Allows the span to take available space */
+                word-wrap: break-word; /* Ensures long words break into next line */
+            }
 
-                .request-card .field span {
-                    color: #ddd;
-                }
+    .button-group {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+        .button-group button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5em;
+            padding: 0;
+        }
+
+        .button-group .approve-button {
+            color: green;
+        }
+
+        .button-group .disapprove-button {
+            color: red;
+        }
 </style>
-
 
 <div class="request-list">
     <h2>Requests to Trainer</h2>
     @foreach (var request in Model)
     {
-
         <div class="request-card">
-        <div>
+            <div class="field">
                 <label>Approved:</label>
                 <span>@(request.IsApproved ? "Yes" : "No")</span>
             </div>
-        <div>
+            <div class="field">
                 <label>Description:</label>
                 <span>@request.DecriptionOfRequest</span>
             </div>
+            <div class="button-group">
+                <form asp-action="ApproveRequest" asp-route-id="@request.Id" method="post"  onsubmit="return confirm('Are you sure you want to approve this request?');">
+                    <input type="hidden" name="requestId" value="@request.Id" />
+                    <button type="submit" class="approve-button" title="Approve">&#10004;</button>
+                </form>
+                <form asp-action="DisapproveRequest" method="post" onsubmit="return confirm('Are you sure you want to disapprove this request?');">
+                    <input type="hidden" name="requestId" value="@request.Id" />
+                    <button type="submit" class="disapprove-button" title="Disapprove">&#10008;</button>
+                </form>
+            </div>
         </div>
-      
     }
 </div>

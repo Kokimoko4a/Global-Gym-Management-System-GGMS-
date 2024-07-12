@@ -9,6 +9,9 @@
     using System.Text;
     using GGMS.Data.Models;
     using GGMS.Web.ViewModels.User;
+    using GGMS.Web.Infrastructure.Extensions;
+    using System.Security.Claims;
+    using GGMSServices.Data.Interfaces;
 
 
     // using System.Web.SessionState.HttpSessionState;
@@ -18,16 +21,19 @@
         private readonly SignInManager<ApplicationUser> signInManager;
         private readonly UserManager<ApplicationUser> userManager;
         private readonly IMemoryCache memoryCache;
+        private readonly IRequestService requestService;
 
 
         public UserController(SignInManager<ApplicationUser> signInManager,
                               UserManager<ApplicationUser> userManager,
-                              IMemoryCache memoryCache
+                              IMemoryCache memoryCache,
+                              IRequestService requestService
                              )
         {
             this.signInManager = signInManager;
             this.userManager = userManager;
             this.memoryCache = memoryCache;
+            this.requestService = requestService;
         }
 
         [HttpGet]
@@ -162,6 +168,22 @@
 
              return RedirectToAction("Index", "Home");
          }
+
+        public async Task<IActionResult> GetResponses()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                var userId = Guid.Parse(User.GetClaimValue(ClaimTypes.NameIdentifier));
+
+                return View(requestService.GetAllRequestsForUser(userId));
+            }
+
+            return RedirectToAction("Login", "User");
+
+
+        }
+
+
 
          /*public async Task<FileResult> DownloadUserData(Guid id)
          {
