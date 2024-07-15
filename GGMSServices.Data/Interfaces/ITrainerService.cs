@@ -35,10 +35,12 @@
 
         public Task<ApplicationUser> GetSingleUserDataAsync(Guid id);
 
-        public Task AssignProgramToClient(List<Guid> programIds, Guid userId);
+        public Task<List<FitnessProgram>> AssignProgramToClient(List<Guid> programIds, Guid userId);
 
         public Task SetMomentValueForTrainer(Guid id, Guid idOfClient);
 
         public Task<Trainer> GetTrainerBaseModel(Guid id);
+
+        public Task<ApplicationUser> GetTrainerParalelUserRecord(Guid id);//gets user by trainer id ;)
     }
 }

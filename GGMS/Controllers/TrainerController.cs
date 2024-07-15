@@ -2,6 +2,7 @@
 {
     using GGMS.Data.Models;
     using GGMS.Web.Infrastructure.Extensions;
+    using GGMS.Web.SpecialModels;
     using GGMS.Web.ViewModels.FitnessProgram;
     using GGMS.Web.ViewModels.Trainer;
     using GGMSServices.Data.Interfaces;
@@ -225,7 +226,9 @@
 
                 if (await trainerService.IsTrainer(id))
                 {
+                    Console.WriteLine(User.Identity.Name);
                     return View(await trainerService.AllProgramsAsync(id));
+                    
                 }
             }
 
@@ -235,16 +238,31 @@
         [HttpPost]
         public async Task<IActionResult> SaveSelectedPrograms(string SelectedProgramIds)
         {
-            var selectedIds = SelectedProgramIds.Split(',')
-                .Select(id => Guid.Parse(id))
-                .ToList();
+
+            if (SelectedProgramIds != null)
+            {
+                var selectedIds = SelectedProgramIds.Split(',')
+              .Select(id => Guid.Parse(id))
+              .ToList();
 
 
-            Trainer trainer =  await trainerService.GetTrainerBaseModel(Guid.Parse(User.GetClaimValue(ClaimTypes.NameIdentifier)));
+                Trainer trainer = await trainerService.GetTrainerBaseModel(Guid.Parse(User.GetClaimValue(ClaimTypes.NameIdentifier)));
 
-            await trainerService.AssignProgramToClient(selectedIds, trainer.IdOfClientCurrentlyWorkingWith);
+                List<FitnessProgram> fitnessPrograms =  await trainerService.AssignProgramToClient(selectedIds, trainer.IdOfClientCurrentlyWorkingWith);
+
+                ApplicationUser trainerAsUser = await trainerService.GetTrainerParalelUserRecord(trainer.Id);
+
+
+                EmailSender emailSender = new EmailSender();
+
+                await emailSender.Execute(trainerAsUser,trainer.Clients.First(x => x.Id == trainer.IdOfClientCurrentlyWorkingWith), fitnessPrograms);
+
+      
+
+            }
 
             return RedirectToAction("GetAllPrograms");
+
         }
 
 

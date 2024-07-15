@@ -332,7 +332,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Kaloyan\\GGMS\\Global-Gym-Management-System-GGMS-\\GGMS.Data.Models\\GGMS.Data.Models.csproj": {
+                "projectPath": "D:\\Kaloyan\\GGMS\\Global-Gym-Management-System-GGMS-\\GGMS.Data.Models\\GGMS.Data.Models.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -353,6 +357,18 @@
             "Microsoft.AspNetCore.SignalR.Core": {
               "target": "Package",
               "version": "[1.1.0, )"
+            },
+            "PDFsharp": {
+              "target": "Package",
+              "version": "[6.1.1, )"
+            },
+            "Select.HtmlToPdf.NetCore": {
+              "target": "Package",
+              "version": "[24.1.0, )"
+            },
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.29.3, )"
             }
           },
           "imports": [

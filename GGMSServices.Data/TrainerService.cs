@@ -49,7 +49,7 @@
 
         }
 
-        public async Task AssignProgramToClient(List<Guid> programIds, Guid userId)
+        public async Task<List<FitnessProgram>> AssignProgramToClient(List<Guid> programIds, Guid userId)
         {
            
 
@@ -79,6 +79,8 @@
             }
 
             await data.SaveChangesAsync();
+
+            return fitnessPrograms;
         }
 
         public async Task<bool> BecomeTrainer(TrainerFormModel trainerViewModel, Guid userId)
@@ -219,8 +221,10 @@
 
         public async Task<Trainer> GetTrainerBaseModel(Guid id) => await data.Trainers.FirstAsync(x => x.Id == id);
 
-
-
+        public async Task<ApplicationUser> GetTrainerParalelUserRecord(Guid id)
+        {
+            return await data.Users.FirstOrDefaultAsync(x => x.Id == id);
+        }
 
         public async Task<bool> IsTrainer(Guid id)
         {
