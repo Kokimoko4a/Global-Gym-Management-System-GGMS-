@@ -1,0 +1,92 @@
+﻿@using GGMS.Web.ViewModels.FitnessProgram;
+@model List<FitnessProgramSmallViewModel>
+
+@{
+    ViewBag.Title = "Fitness Programs";
+}
+
+<h2>Fitness Programs</h2>
+
+<div id="programs">
+    @foreach (var program in Model)
+    {
+        <div class="program" draggable="true" data-id="@program.Id">
+            <h3>@program.Title</h3>
+            <p>Issue Date: @program.IssueDate.ToShortDateString()</p>
+        </div>
+    }
+</div>
+
+<h2>Selected Programs</h2>
+<div id="selected-programs">
+    <p>Drag and drop programs here.</p>
+</div>
+
+<form id="selected-programs-form" method="post" action="@Url.Action("SaveSelectedPrograms", "Trainer")">
+    <input type="hidden" id="selected-programs-input" name="SelectedProgramIds" />
+    <button type="submit" id="save-button">Save Selected Programs</button>
+</form>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const programsContainer = document.getElementById('programs');
+            const selectedProgramsContainer = document.getElementById('selected-programs');
+            const saveButton = document.getElementById('save-button');
+            const selectedProgramsInput = document.getElementById('selected-programs-input');
+
+            function enableDragAndDrop(element) {
+                element.addEventListener('dragstart', function (e) {
+                    e.dataTransfer.setData('text/plain', element.getAttribute('data-id'));
+                });
+            }
+
+            function enableDrop(container) {
+                container.addEventListener('dragover', function (e) {
+                    e.preventDefault();
+                });
+
+                container.addEventListener('drop', function (e) {
+                    e.preventDefault();
+                    const id = e.dataTransfer.getData('text/plain');
+                    const program = document.querySelector(`.program[data-id='${id}']`);
+                    container.appendChild(program);
+                });
+            }
+
+            // Enable drag and drop for initial programs
+            document.querySelectorAll('.program').forEach(program => {
+                enableDragAndDrop(program);
+            });
+
+            // Enable drop for both containers
+            enableDrop(programsContainer);
+            enableDrop(selectedProgramsContainer);
+
+            // Update hidden input value before form submission
+            saveButton.addEventListener('click', function (e) {
+                const selectedIds = Array.from(selectedProgramsContainer.querySelectorAll('.program'))
+                    .map(program => program.getAttribute('data-id'));
+
+                selectedProgramsInput.value = selectedIds.join(',');
+
+                console.log('Selected Program IDs:', selectedIds); // Debugging line
+            });
+        });
+    </script>
+}
+
+<style>
+    #programs, #selected-programs {
+        border: 1px solid #ccc;
+        padding: 10px;
+        min-height: 200px;
+    }
+
+    .program {
+        border: 1px solid #000;
+        padding: 10px;
+        margin: 5px;
+        cursor: grab;
+    }
+</style>

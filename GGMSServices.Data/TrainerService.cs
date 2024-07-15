@@ -8,6 +8,7 @@
     using GGMSServices.Data.Interfaces;
     using Microsoft.EntityFrameworkCore;
     using System.Collections.Generic;
+    using System.Linq;
 
     public class TrainerService : ITrainerService
     {
@@ -46,6 +47,38 @@
             return programs;
 
 
+        }
+
+        public async Task AssignProgramToClient(List<Guid> programIds, Guid userId)
+        {
+           
+
+            List<FitnessProgram> fitnessPrograms = data.FitnessPrograms.Where(x => programIds.Contains(x.Id)).ToList();
+
+            ApplicationUser applicationUser = await data.Users.Include(x => x.FitnessPrograms).FirstOrDefaultAsync(x => x.Id == userId)!;
+
+           
+
+            foreach (var program in fitnessPrograms)
+            {
+                if (applicationUser.FitnessPrograms.FirstOrDefault(x => x.FitnessProgramId == program.Id) == null)
+                {
+
+                    UserFitnessProgram userFitnessProgram = new UserFitnessProgram()
+                    {
+                        FitnessProgram = program,
+                        FitnessProgramId = program.Id,
+                        User = applicationUser!,
+                        UserId = userId
+                    };
+
+
+
+                    applicationUser!.FitnessPrograms.Add(userFitnessProgram);
+                }
+            }
+
+            await data.SaveChangesAsync();
         }
 
         public async Task<bool> BecomeTrainer(TrainerFormModel trainerViewModel, Guid userId)
@@ -98,6 +131,8 @@
 
             return trainer!.Clients;
         }
+
+ 
 
         public AllTrainers GetAllTrainers()
         {
@@ -182,6 +217,11 @@
             return trainerViewModel;
         }
 
+        public async Task<Trainer> GetTrainerBaseModel(Guid id) => await data.Trainers.FirstAsync(x => x.Id == id);
+
+
+
+
         public async Task<bool> IsTrainer(Guid id)
         {
             bool result = await data.Trainers.AnyAsync(x => x.Id == id);
@@ -204,6 +244,13 @@
             return requestToTrainer;
         }
 
+        public async Task SetMomentValueForTrainer(Guid id, Guid momentIdOfClient)
+        {
+           Trainer trainer = await data.Trainers.FirstOrDefaultAsync(x => x.Id == id)!;
 
+            trainer.IdOfClientCurrentlyWorkingWith = momentIdOfClient;
+
+            await data.SaveChangesAsync();
+        }
     }
 }

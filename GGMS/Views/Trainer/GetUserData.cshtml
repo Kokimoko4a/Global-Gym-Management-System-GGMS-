@@ -1,4 +1,5 @@
 ﻿@using GGMS.Data.Models;
+@using GGMS.Web.Infrastructure.Extensions
 @model ApplicationUser;
 
 <!DOCTYPE html>
@@ -89,8 +90,12 @@
             <span>@Model.Address</span>
         </div>
         <div class="button-group">
-            <button onclick="location.href='@Url.Action("Edit", new { id = Model.Id })'">Edit</button>
-            <button onclick="location.href='@Url.Action("Index")'">Back to List</button>
+           <form asp-action="GetAllPrograms" asp-asp-controller="Trainer">
+
+               <button>Assign Program/s</button>
+
+           </form>
+            <button onclick="location.href='@Url.Action("MyClients")'">Back to List</button>
         </div>
     </div>
 </body>

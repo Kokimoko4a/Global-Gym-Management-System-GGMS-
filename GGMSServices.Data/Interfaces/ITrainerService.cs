@@ -35,5 +35,10 @@
 
         public Task<ApplicationUser> GetSingleUserDataAsync(Guid id);
 
+        public Task AssignProgramToClient(List<Guid> programIds, Guid userId);
+
+        public Task SetMomentValueForTrainer(Guid id, Guid idOfClient);
+
+        public Task<Trainer> GetTrainerBaseModel(Guid id);
     }
 }

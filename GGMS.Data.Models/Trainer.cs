@@ -29,5 +29,8 @@
         public ICollection<RequestToTrainer> Requests { get; set; }
 
         public ICollection<CommentTrainer> Comments { get; set; } = null!;
+
+        //this property is neccesary for assigning fitness programs!!!
+        public Guid IdOfClientCurrentlyWorkingWith { get; set; }
     }
 }

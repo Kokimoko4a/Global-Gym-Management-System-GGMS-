@@ -200,6 +200,9 @@
             if (User.Identity.IsAuthenticated)
             {
                 Guid idTrainer = Guid.Parse(User.GetClaimValue(ClaimTypes.NameIdentifier));
+                await trainerService.SetMomentValueForTrainer(idTrainer, id);
+
+                ViewData["TargetUserId"] = id;
 
                 if (await trainerService.IsTrainer(idTrainer))
                 {
@@ -211,5 +214,39 @@
 
             return BadRequest();
         }
+
+        public async Task<IActionResult> GetAllPrograms()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                var id = Guid.Parse(User.GetClaimValue(ClaimTypes.NameIdentifier));
+
+
+
+                if (await trainerService.IsTrainer(id))
+                {
+                    return View(await trainerService.AllProgramsAsync(id));
+                }
+            }
+
+            return BadRequest();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> SaveSelectedPrograms(string SelectedProgramIds)
+        {
+            var selectedIds = SelectedProgramIds.Split(',')
+                .Select(id => Guid.Parse(id))
+                .ToList();
+
+
+            Trainer trainer =  await trainerService.GetTrainerBaseModel(Guid.Parse(User.GetClaimValue(ClaimTypes.NameIdentifier)));
+
+            await trainerService.AssignProgramToClient(selectedIds, trainer.IdOfClientCurrentlyWorkingWith);
+
+            return RedirectToAction("GetAllPrograms");
+        }
+
+
     }
 }
