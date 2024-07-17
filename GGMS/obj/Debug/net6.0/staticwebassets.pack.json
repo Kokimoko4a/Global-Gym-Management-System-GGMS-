@@ -13,6 +13,18 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\Kaloyan\\GGMS\\Global-Gym-Management-System-GGMS-\\GGMS\\wwwroot\\images\\9311dcb3-53df-44ef-b57c-84a7dbfd0074_1920X1080.jpg",
+      "PackagePath": "staticwebassets\\images\\9311dcb3-53df-44ef-b57c-84a7dbfd0074_1920X1080.jpg"
+    },
+    {
+      "Id": "D:\\Kaloyan\\GGMS\\Global-Gym-Management-System-GGMS-\\GGMS\\wwwroot\\images\\b271e2df-3814-41b3-ba86-4258b2c2ed5d_pexels-mike-383557.jpg",
+      "PackagePath": "staticwebassets\\images\\b271e2df-3814-41b3-ba86-4258b2c2ed5d_pexels-mike-383557.jpg"
+    },
+    {
+      "Id": "D:\\Kaloyan\\GGMS\\Global-Gym-Management-System-GGMS-\\GGMS\\wwwroot\\images\\default-avatar-profile-icon-of-social-media-user-vector.jpg",
+      "PackagePath": "staticwebassets\\images\\default-avatar-profile-icon-of-social-media-user-vector.jpg"
+    },
+    {
       "Id": "D:\\Kaloyan\\GGMS\\Global-Gym-Management-System-GGMS-\\GGMS\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

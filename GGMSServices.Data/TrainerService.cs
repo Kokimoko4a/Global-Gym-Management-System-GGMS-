@@ -131,6 +131,10 @@
         {
             Trainer trainer = await data.Trainers.Include(x => x.Clients).FirstOrDefaultAsync(x => x.Id == id)!;
 
+            var ani = trainer.Clients.FirstOrDefault(x => x.Email.Contains("client"));
+
+         
+
             return trainer!.Clients;
         }
 

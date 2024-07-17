@@ -222,7 +222,7 @@
 
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li><a href="@Url.Action("Profile", "User")"><i class="fas fa-user"></i><span>My Profile</span></a></li>
+                        <li><a href="@Url.Action("ViewProfile", "User")"><i class="fas fa-user"></i><span>My Profile</span></a></li>
                         <li><a href="@Url.Action("GetResponses", "User")"><i class="fa fa-handshake"></i><span>Responses</span></a></li>
 
                         @if (await trainerService.IsTrainer(Guid.Parse(User.GetClaimValue(ClaimTypes.NameIdentifier))))

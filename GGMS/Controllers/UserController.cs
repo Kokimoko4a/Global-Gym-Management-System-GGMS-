@@ -12,6 +12,8 @@
     using GGMS.Web.Infrastructure.Extensions;
     using System.Security.Claims;
     using GGMSServices.Data.Interfaces;
+    using Microsoft.AspNetCore.Hosting;
+    using static GGMS.Common.GeneralApplicationConstants;
 
 
     // using System.Web.SessionState.HttpSessionState;
@@ -22,18 +24,21 @@
         private readonly UserManager<ApplicationUser> userManager;
         private readonly IMemoryCache memoryCache;
         private readonly IRequestService requestService;
+        private readonly IUserService userService;
 
 
         public UserController(SignInManager<ApplicationUser> signInManager,
                               UserManager<ApplicationUser> userManager,
                               IMemoryCache memoryCache,
-                              IRequestService requestService
+                              IRequestService requestService,
+                              IUserService userService
                              )
         {
             this.signInManager = signInManager;
             this.userManager = userManager;
             this.memoryCache = memoryCache;
             this.requestService = requestService;
+            this.userService = userService;
         }
 
         [HttpGet]
@@ -124,23 +129,68 @@
               return Redirect(model.ReturnUrl ?? "/Home/Index");
           }
 
-        /* [HttpGet]
-         public async Task<IActionResult> ViewProfile(Guid id)
+         [HttpGet]
+         public async Task<IActionResult> ViewProfile()
          {
-             if (User.GetId() != id.ToString())
-             {
-                 return BadRequest();
-             }
+            if (User.Identity.IsAuthenticated)
+            {
+                Guid id = Guid.Parse(User.GetClaimValue(ClaimTypes.NameIdentifier));
 
-             if (await userService.GetAllInfoAboutUserByIdAsync(id) == null)
-             {
-                 return BadRequest();
-             }
+                try
+                {
+                    var user = await userService.GetApplicationUserAsync(id);
 
-             return View(await userService.GetAllInfoAboutUserByIdAsync(id));
+                    return View(user);
+                }
+                catch (Exception)
+                {
+
+                    return BadRequest();
+                }
+
+             
+            }
+
+            return BadRequest();
          }
 
-         [HttpPost]
+        [HttpPost]
+        public async Task<IActionResult> UploadImage(Guid id, IFormFile image)
+        {
+            if (image != null && image.Length > 0)
+            {
+
+                var user = await userService.GetApplicationUserAsync(id);
+
+                if (user == null)
+                {
+                    return NotFound();
+                }
+
+                // Define the directory path and the file name
+                var uploadsDirectory = Path.Combine(WwwRootPath, "images");
+                var uniqueFileName = Guid.NewGuid().ToString() + "_" + image.FileName;
+                var filePath = Path.Combine(uploadsDirectory, uniqueFileName);
+
+                // Create the directory if it doesn't exist
+                if (!Directory.Exists(uploadsDirectory))
+                {
+                    Directory.CreateDirectory(uploadsDirectory);
+                }
+
+                // Save the file to the specified path
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await image.CopyToAsync(fileStream);
+                }
+
+                await userService.SaveImagePathAsync(uniqueFileName, id);
+            }
+
+            return RedirectToAction("ViewProfile", new { id });
+        }
+
+        /* [HttpPost]
          public async Task<IActionResult> DeleteAccount(Guid id)
          {
              if (await userService.GetAllInfoAboutUserByIdAsync(id) == null)
@@ -162,7 +212,7 @@
 
 
 
-         public async Task<IActionResult> Logout()
+        public async Task<IActionResult> Logout()
          {
              await signInManager.SignOutAsync();
 

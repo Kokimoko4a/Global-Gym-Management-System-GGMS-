@@ -37,6 +37,13 @@
                 margin: 0;
             }
 
+        .profile-image {
+            max-width: 100%;
+            max-height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
         .button-group {
             display: flex;
             justify-content: space-around;
@@ -67,12 +74,16 @@
             {
                 <div class="user-card">
                     <h2>@user.FirstName @user.LastName</h2>
+                    @if (!string.IsNullOrEmpty(user.PathToImage))
+                    {
+                        <img src="~/images/@user.PathToImage" alt="Profile Image" class="profile-image" />
+                    }
+                 
                     <div class="button-group">
                         <form asp-action="GetUserData" asp-route-id="@user.Id" method="get">
                             <input type="hidden" name="id" value="@user.Id" />
                             <button type="submit">More info</button>
                         </form>
-                  
                     </div>
                 </div>
             }

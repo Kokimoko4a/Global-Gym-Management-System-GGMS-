@@ -53,5 +53,7 @@
         public ICollection<LikeCommentTrainer> Likes { get; set; } = null!;
 
         public ICollection<DislikeCommentTrainer> DisLikes { get; set; } = null!;
+
+        public string PathToImage { get; set; } = "default-avatar-profile-icon-of-social-media-user-vector.jpg";
     }
 }

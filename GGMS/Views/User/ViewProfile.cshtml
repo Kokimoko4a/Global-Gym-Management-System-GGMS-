@@ -1,0 +1,60 @@
+﻿@using GGMS.Data.Models;
+@model ApplicationUser;
+
+<div class="container">
+    <h1>@Model.FirstName @Model.LastName</h1>
+
+    <div>
+        <p><strong>Username:</strong> @Model.UserName</p>
+        <p><strong>Age:</strong> @Model.Age</p>
+        <p><strong>Telephone:</strong> @Model.TelephoneNumber</p>
+        <p><strong>Address:</strong> @Model.Address</p>
+        @* Add other properties as needed *@
+    </div>
+
+    <div>
+        <h2>Profile Image</h2>
+        @if (!string.IsNullOrEmpty(Model.PathToImage))
+        {
+            <img src="~/images/@Model.PathToImage" alt="Profile Image" style="max-width: 200px; max-height: 200px;" />
+        }
+        else
+        {
+            <p>No profile image available.</p>
+        }
+    </div>
+
+    <h2>Upload Profile Image</h2>
+    <form method="post" enctype="multipart/form-data" asp-action="UploadImage" asp-controller="User">
+        <input type="hidden" name="id" value="@Model.Id" />
+        <div class="form-group">
+            <label for="image">Attach Image</label>
+            <input type="file" class="form-control" id="image" name="image" onchange="previewImage(event)" />
+       
+        </div>
+        <div id="preview" style="margin-top: 20px;"></div>
+        <button type="submit" class="btn btn-primary">Upload Image</button>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        function previewImage(event) {
+            var files = event.target.files;
+            var preview = document.getElementById('preview');
+            preview.innerHTML = '';
+            if (files.length > 0) {
+                var file = files[0];
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    var img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.style.maxWidth = '200px';
+                    img.style.maxHeight = '200px';
+                    preview.appendChild(img);
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+}

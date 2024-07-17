@@ -7,7 +7,7 @@
 
     public class EmailSender
     {
-        public async Task Execute(ApplicationUser trainer, ApplicationUser user, List<FitnessProgram> fitnessPrograms)
+        public async Task Execute(ApplicationUser trainer, ApplicationUser user, List<FitnessProgram> fitnessPrograms) //if you have this to work get new api key!!!!
         {
             
 
@@ -35,7 +35,7 @@
 
                 byte[] bytes = pdfDocument.Save();
 
-                msg.AddAttachment($"{item.Title}.txt", Convert.ToBase64String(bytes));
+                msg.AddAttachment($"{item.Title}.pdf", Convert.ToBase64String(bytes));
             }
 
 
@@ -44,7 +44,12 @@
             var fileBytes = System.IO.File.ReadAllBytes(filePath);
             var fileBase64 = Convert.ToBase64String(fileBytes);*/  
 
-            await client.SendEmailAsync(msg);
+            var response =  await client.SendEmailAsync(msg);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception();
+            }
         }
     }
 }
