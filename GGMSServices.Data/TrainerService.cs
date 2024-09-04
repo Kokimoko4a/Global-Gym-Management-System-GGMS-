@@ -153,6 +153,10 @@
             {
                 trainer.FirstName = data.Users.First(x => x.Id == trainer.Id).FirstName;
                 trainer.LastName = data.Users.First(x => x.Id == trainer.Id).LastName;
+                trainer.PathToImage = data.Users.First(x => x.Id == trainer.Id).PathToImage;
+
+        
+        
             }
 
 
@@ -218,6 +222,7 @@
                 LastName = user.LastName,
                 TelephoneNumber = user.TelephoneNumber,
                 Comments = trainer.Comments,
+                PathToImage = user.PathToImage
             };
 
             return trainerViewModel;

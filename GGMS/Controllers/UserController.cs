@@ -14,6 +14,7 @@
     using GGMSServices.Data.Interfaces;
     using Microsoft.AspNetCore.Hosting;
     using static GGMS.Common.GeneralApplicationConstants;
+    using static GGMS.Common.NotificationMessagesConstants;
 
 
     // using System.Web.SessionState.HttpSessionState;
@@ -188,6 +189,33 @@
             }
 
             return RedirectToAction("ViewProfile", new { id });
+        }
+
+        public IActionResult GetAllAssignedPrograms()
+        {
+            Guid userId = Guid.Parse(User.GetClaimValue(ClaimTypes.NameIdentifier));
+
+            return View(userService.GetAllAssignedProgramsForUser(userId));
+        }
+
+        public async Task<IActionResult> DetailsForProgram(Guid id)
+        {
+
+            if (User.Identity.IsAuthenticated)
+            {
+                Guid userId = Guid.Parse(User.GetClaimValue(ClaimTypes.NameIdentifier));
+
+                if (await userService.CheckProgramOwnerAsync(userId, id))
+                {
+                    return View(await userService.GetProgramBigViewForUserAsync(id));
+                }
+
+                TempData[WarningMessage] = "This program is not yours! Do not be pussy!!!!!";
+                return RedirectToAction("Index", "Home");
+            }
+
+            return BadRequest();
+            
         }
 
         /* [HttpPost]

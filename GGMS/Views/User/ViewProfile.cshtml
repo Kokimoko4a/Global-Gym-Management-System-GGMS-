@@ -30,11 +30,15 @@
         <div class="form-group">
             <label for="image">Attach Image</label>
             <input type="file" class="form-control" id="image" name="image" onchange="previewImage(event)" />
-       
         </div>
         <div id="preview" style="margin-top: 20px;"></div>
         <button type="submit" class="btn btn-primary">Upload Image</button>
     </form>
+
+    <!-- View Assigned Programs Button -->
+    <div style="margin-top: 20px;">
+        <a href="@Url.Action("GetAllAssignedPrograms", "User")" class="btn btn-info">View Assigned Programs</a>
+    </div>
 </div>
 
 @section Scripts {

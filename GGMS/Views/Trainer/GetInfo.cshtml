@@ -51,6 +51,15 @@
                 display: block;
             }
 
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 15px auto;
+        }
+
         .button-container {
             text-align: center;
             margin-top: 20px;
@@ -124,6 +133,9 @@
 <body>
     <div class="container">
         <h2>@ViewData["Title"]</h2>
+
+        <img src="~/images/@Model.PathToImage" alt="Trainer Image" class="profile-image" />
+
         <div class="card">
             <label>First Name:</label>
             <span>@Model.FirstName</span>
@@ -147,6 +159,7 @@
         <div class="card">
             <label>Address:</label>
             <span>@Model.Address</span>
+        </div>
         </div>
         <div class="button-container">
             <form asp-action="RequestBecomingClient" asp-controller="Trainer" asp-route-id="@Model.Id" method="get">

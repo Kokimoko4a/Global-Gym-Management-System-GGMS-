@@ -8,5 +8,7 @@
 
         public string LastName { get; set; } = null!;
 
+        public string PathToImage { get; set; } = null!;
+
     }
 }

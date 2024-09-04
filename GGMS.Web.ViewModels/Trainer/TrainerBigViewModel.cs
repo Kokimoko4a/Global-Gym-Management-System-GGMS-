@@ -24,5 +24,7 @@ namespace GGMS.Web.ViewModels.Trainer
         public string Address { get; set; } = null!;
 
         public ICollection<CommentTrainer> Comments { get; set; }
+
+        public string PathToImage { get; set; } = null!;
     }
 }

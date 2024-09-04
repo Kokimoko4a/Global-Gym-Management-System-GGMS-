@@ -1,0 +1,34 @@
+﻿@model IEnumerable<GGMS.Web.ViewModels.FitnessProgram.FitnessProgramSmallViewModel>;
+
+<div class="container">
+    <h1>Assigned Fitness Programs</h1>
+
+    @if (Model.Any())
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Issue Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var program in Model)
+                {
+                    <tr>
+                        <td>@program.Title</td>
+                        <td>@program.IssueDate.ToShortDateString()</td>
+                        <td>
+                            <a asp-controller="User" asp-action="DetailsForProgram" asp-route-id="@program.Id" class="btn btn-primary">View Details</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No fitness programs assigned.</p>
+    }
+</div>

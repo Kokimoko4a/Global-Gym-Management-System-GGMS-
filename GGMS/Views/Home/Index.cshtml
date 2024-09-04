@@ -1,4 +1,10 @@
-﻿@{
+﻿@using GGMSServices.Data.Interfaces;
+@using GGMS.Web.Infrastructure.Extensions;
+@using System.Security.Claims;
+@inject ITrainerService trainerService;
+@inject IGymOwnerService gymOwnerService;
+
+@{
   Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <!DOCTYPE html>
@@ -108,8 +114,24 @@
             <div class="buttons">
                 <a  class="btn">Explore Gyms</a>
                 <a  class="btn">Contact Trainers</a>
-                <a  class="btn">Become a Gym Owner</a>
-                <a asp-action="BecomeTrainer" asp-controller="Trainer" method="get" class="btn">Become a Trainer</a>
+             
+
+                @if (User!.Identity!.IsAuthenticated)
+                {
+                    Guid userId = Guid.Parse(User.GetClaimValue(ClaimTypes.NameIdentifier));
+
+                    if (!await trainerService.IsTrainer(userId))
+                    {
+                        <a asp-action="BecomeTrainer" asp-controller="Trainer" method="get" class="btn">Become a Trainer</a>
+                    }
+
+                    if (!await gymOwnerService.IsGymOwner(userId))
+                    {
+                        <a asp-action="BecomeGymOwner" asp-controller="GymOwner" class="btn">Become a Gym Owner</a>
+                    } 
+                }
+
+             
             </div>
         </form>
 

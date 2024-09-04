@@ -22,6 +22,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Kaloyan/GGMS/Global-Gym-Management-System-GGMS-/GGMS/Views/GymOwner/CreateGym.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3ltT3duZXJcQ3JlYXRlR3ltLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Kaloyan/GGMS/Global-Gym-Management-System-GGMS-/GGMS/Views/Home/GetTrainers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRUcmFpbmVycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -92,6 +96,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Kaloyan/GGMS/Global-Gym-Management-System-GGMS-/GGMS/Views/Trainer/ViewProgram.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhaW5lclxWaWV3UHJvZ3JhbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Kaloyan/GGMS/Global-Gym-Management-System-GGMS-/GGMS/Views/User/DetailsForProgram.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZXRhaWxzRm9yUHJvZ3JhbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Kaloyan/GGMS/Global-Gym-Management-System-GGMS-/GGMS/Views/User/GetAllAssignedPrograms.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxHZXRBbGxBc3NpZ25lZFByb2dyYW1zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Kaloyan/GGMS/Global-Gym-Management-System-GGMS-/GGMS/Views/User/GetResponses.cshtml]

@@ -1,7 +1,9 @@
 ﻿@using GGMS.Web.Infrastructure.Extensions
 @using System.Security.Claims
+@using GGMSServices.Data.Interfaces;
 @using static GGMS.Web.Infrastructure.Extensions.WebApplicationBuilderExtensions;
-@inject GGMSServices.Data.Interfaces.ITrainerService trainerService;
+@inject ITrainerService trainerService;
+@inject IGymOwnerService gymOwnerService;
 
 <!DOCTYPE html>
 <html lang="en">
@@ -231,6 +233,11 @@
                             <li><a href="@Url.Action("CreateProgram", "Trainer")"><i class="fas fa-dumbbell"></i><span>Create Program</span></a></li>
                             <li><a href="@Url.Action("AllFitnessPrograms", "Trainer")"><i class="fas fa-th-list"></i><span>My programs</span></a></li>
                             <li><a href="@Url.Action("GetAllRequests", "Request")"><i class="fas fa-envelope"></i><span>Requests</span></a></li>
+                        }
+
+                        @if (await gymOwnerService.IsGymOwner(Guid.Parse(User.GetClaimValue(ClaimTypes.NameIdentifier))))
+                        {
+                            <li><a href="@Url.Action("CreateGym", "GymOwner")"><i class="fas fa-building"></i><span>Add gym</span></a></li>
                         }
                     }
 
