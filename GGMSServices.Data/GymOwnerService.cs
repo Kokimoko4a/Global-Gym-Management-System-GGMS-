@@ -5,6 +5,8 @@
     using GGMS.Web.ViewModels.GymOwner;
     using GGMSServices.Data.Interfaces;
     using Microsoft.EntityFrameworkCore;
+    using System.Collections.Generic;
+    using System.Linq;
     using System.Text;
 
     public class GymOwnerService : IGymOwnerService
@@ -53,14 +55,16 @@
                 if (photo != null && photo.Length > 0)
                 {
 
-                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", photo.FileName + Guid.NewGuid().ToString());
+                    string fileName = Guid.NewGuid().ToString()  + photo.FileName;
+
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", fileName);
 
                     using (var stream = new FileStream(filePath, FileMode.Create))
                     {
                         await photo.CopyToAsync(stream);
                     }
 
-                    sb.Append(filePath + ",");
+                    sb.Append(fileName + ",");
                 }
             }
 
@@ -71,6 +75,16 @@
             gymOwnerRecord.Gyms.Add(gym);
 
             await data.SaveChangesAsync();
+        }
+
+        public IEnumerable<GymSmallViewModel> GetAllGyms()
+        {
+            return data.Gyms.Select(x => new GymSmallViewModel()
+            {
+                Addrress = x.Address,
+                PhotosPaths = x.PhotosPaths,
+                Name = x.Name
+            });
         }
     }
 }

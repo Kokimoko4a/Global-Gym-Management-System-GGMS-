@@ -81,6 +81,12 @@ namespace GGMS.Web.Controllers
 
         }
 
+        [HttpGet]
+        public IActionResult GetAllGyms() 
+        {
+            return View(gymOwnerService.GetAllGyms());
+        }
+
     }
 
 }

@@ -1,7 +1,7 @@
-﻿using GGMS.Web.ViewModels.GymOwner;
-
-namespace GGMSServices.Data.Interfaces
+﻿namespace GGMSServices.Data.Interfaces
 {
+    using GGMS.Web.ViewModels.GymOwner;
+
     public interface IGymOwnerService
     {
         public Task<bool> IsGymOwner(Guid id);
@@ -9,6 +9,8 @@ namespace GGMSServices.Data.Interfaces
         public Task BecomeGymOwner(Guid id);
 
         public Task CreateGym(GymFormModel formModel, Guid creatorId);
+
+        public IEnumerable<GymSmallViewModel> GetAllGyms();
             
     }
 }

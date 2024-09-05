@@ -1,0 +1,98 @@
+﻿@using GGMS.Web.ViewModels.GymOwner;
+@model IEnumerable<GymSmallViewModel>
+
+<!-- Add custom styling for gym items and layout -->
+<style>
+    .gym-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; /* Space between gym items */
+        justify-content: space-between; /* Spread items evenly across the row */
+    }
+
+    .gym-item {
+        flex: 1 1 calc(33.33% - 20px); /* Ensure three items per row */
+        max-width: calc(33.33% - 20px); /* Max width for each gym item */
+        box-sizing: border-box; /* Ensures padding and border are included in the width */
+        border: 1px solid #ccc;
+        padding: 10px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    .gym-photo-container img {
+        width: 250px;  /* Larger image size */
+        height: 200px;
+        object-fit: cover; /* Ensures image fits within the square */
+        border-radius: 8px;
+    }
+
+    /* Media queries for responsiveness */
+    @@media (max-width: 1000px) {
+        .gym-item {
+            flex: 1 1 calc(50% - 20px); /* Two items per row for smaller screens */
+            max-width: calc(50% - 20px);
+        }
+    }
+
+    @@media (max-width: 600px) {
+        .gym-item {
+            flex: 1 1 100%; /* One item per row for small screens */
+            max-width: 100%;
+        }
+    }
+</style>
+
+<h2>List of Gyms</h2>
+
+<div class="gym-container">
+    @foreach (var gym in Model)
+    {
+        <div class="gym-item">
+            <h3>@gym.Name</h3>
+            <p>@gym.Addrress</p>
+
+            <!-- Image container with initial photo -->
+            <div class="gym-photo-container">
+                <img id="photo-@gym.Name" src="@GetFirstPhoto(gym.PhotosPaths)" alt="Gym Photo" />
+            </div>
+
+            <!-- Button to switch the photo -->
+            <button type="button" class="btn btn-primary" onclick="switchPhoto('@gym.Name', '@gym.PhotosPaths')">Switch Photo</button>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        function switchPhoto(gymName, photosPaths) {
+            // Split the photo paths string into an array
+            let photos = photosPaths.split(',').map(photo => photo.trim()).filter(photo => photo.length > 0);
+
+            // Get the current photo element by gym name
+            let photoElement = document.getElementById('photo-' + gymName);
+
+            // Get the current photo's source
+            let currentPhotoSrc = photoElement.src;
+
+            // Find the index of the current photo in the array
+            let currentIndex = photos.findIndex(photo => currentPhotoSrc.includes(photo));
+
+            // Determine the next photo index (loop back if at the last photo)
+            let nextIndex = (currentIndex + 1) % photos.length;
+
+            // Update the image source to the next photo with hardcoded /images/ directory
+            photoElement.src = '/images/' + photos[nextIndex];
+        }
+    </script>
+}
+
+@functions {
+    // Helper function to get the first photo for display with hardcoded /images/ directory
+    private string GetFirstPhoto(string photosPaths)
+    {
+        var photos = photosPaths.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+        return photos.Length > 0 ? Url.Content($"~/images/{photos[0].Trim()}") : string.Empty;
+    }
+}
