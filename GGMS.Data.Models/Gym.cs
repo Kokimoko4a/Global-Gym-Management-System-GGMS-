@@ -14,6 +14,7 @@ namespace GGMS.Data.Models
         {
             Id = Guid.NewGuid();
             FitnessCards = new HashSet<FitnessCard>();
+          
         }
 
         [Key]
@@ -29,6 +30,10 @@ namespace GGMS.Data.Models
         public string Address { get; set; } = null!;
 
         [Required]
+        [StringLength(DescriptionMaxLength,MinimumLength = DescriptionMinLength)]
+        public string Description { get; set; }
+
+        [Required]
         public GymOwner Owner { get; set; } = null!;
 
         [Required]
@@ -38,6 +43,8 @@ namespace GGMS.Data.Models
 
 
         public ICollection<FitnessCard> FitnessCards { get; set; }
+
+        public string PhotosPaths { get; set; }
     }
 
 }

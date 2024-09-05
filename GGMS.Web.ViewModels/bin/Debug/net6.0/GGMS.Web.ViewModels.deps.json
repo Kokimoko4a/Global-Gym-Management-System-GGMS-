@@ -9,7 +9,8 @@
       "GGMS.Web.ViewModels/1.0.0": {
         "dependencies": {
           "GGMS.Common": "1.0.0",
-          "GGMS.Data.Models": "1.0.0"
+          "GGMS.Data.Models": "1.0.0",
+          "Microsoft.AspNetCore.Http.Features": "2.2.0"
         },
         "runtime": {
           "GGMS.Web.ViewModels.dll": {}
@@ -31,6 +32,17 @@
           "lib/net6.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.0.1122.52304"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Http.Features/2.2.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "6.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.18316"
           }
         }
       },
@@ -178,6 +190,13 @@
       "sha512": "sha512-wJGQY4Ntci0xuK/F8UM1GX5WVWwc4xD7Se1htHlFNvicK1iDwyXCWUwMjotHqziwV2aSBjv63yTMnX4K+q4FKQ==",
       "path": "microsoft.aspnetcore.cryptography.keyderivation/6.0.11",
       "hashPath": "microsoft.aspnetcore.cryptography.keyderivation.6.0.11.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Http.Features/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ziFz5zH8f33En4dX81LW84I6XrYXKf9jg6aM39cM+LffN9KJahViKZ61dGMSO2gd3e+qe5yBRwsesvyqlZaSMg==",
+      "path": "microsoft.aspnetcore.http.features/2.2.0",
+      "hashPath": "microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.Abstractions/6.0.0": {
       "type": "package",

@@ -1901,7 +1901,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "GGMS.Common": "1.0.0",
-          "GGMS.Data.Models": "1.0.0"
+          "GGMS.Data.Models": "1.0.0",
+          "Microsoft.AspNetCore.Http.Features": "2.2.0"
         },
         "compile": {
           "bin/placeholder/GGMS.Web.ViewModels.dll": {}

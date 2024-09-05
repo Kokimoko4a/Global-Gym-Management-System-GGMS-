@@ -2,6 +2,7 @@
 namespace GGMS.Web.Controllers
 {
     using GGMS.Web.Infrastructure.Extensions;
+    using GGMS.Web.ViewModels.GymOwner;
     using GGMSServices.Data.Interfaces;
     using Microsoft.AspNetCore.Mvc;
     using System.Security.Claims;
@@ -57,6 +58,28 @@ namespace GGMS.Web.Controllers
 
         }
 
+
+        [HttpPost]
+        public async Task<IActionResult> CreateGym(GymFormModel formModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                TempData[ErrorMessage] = "Error when creating!";
+                return View(formModel);
+            }
+
+            if (User.Identity.IsAuthenticated)
+            {
+                Guid userId = Guid.Parse(User.GetClaimValue(ClaimTypes.NameIdentifier));
+
+                await gymOwnerService.CreateGym(formModel,userId);
+
+                return RedirectToAction("Index", "Home");
+            }
+
+            return RedirectToAction("Index", "Home");
+
+        }
 
     }
 

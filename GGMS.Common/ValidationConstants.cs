@@ -11,6 +11,10 @@
             public const int AddressMaxLength = 128;
 
             public const int AddressMinLength = 5;
+
+            public const int DescriptionMaxLength = 256;
+
+            public const int DescriptionMinLength = 20;
         }
 
         public static class FitnessProgramValidationConstants

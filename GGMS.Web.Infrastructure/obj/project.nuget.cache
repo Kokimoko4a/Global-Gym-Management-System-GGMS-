@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "8npns9HkgTzf5RnBfA3ZafbTL8EyX51DGBsJ666P5UxiaZw4Ehrv8joMhVHRGDhtOLz4OCBdyGuCtqK18e7g0Q==",
+  "dgSpecHash": "Nt9QEishiRC1XGEZS1pq+6KRn+8Yca3DIprPJPArJiqVWH2dszBP6lsg37r34UcLS5OM4RHkNDPXwVr5ZNAzww==",
   "success": true,
   "projectFilePath": "D:\\Kaloyan\\GGMS\\Global-Gym-Management-System-GGMS-\\GGMS.Web.Infrastructure\\GGMS.Web.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.11\\microsoft.aspnetcore.cryptography.internal.6.0.11.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.11\\microsoft.aspnetcore.cryptography.keyderivation.6.0.11.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.11\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.11.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
