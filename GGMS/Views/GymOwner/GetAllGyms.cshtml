@@ -28,6 +28,36 @@
         border-radius: 8px;
     }
 
+    /* Button Styles */
+    .btn-primary {
+        background-color: #007bff; /* Primary blue */
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }
+
+    .btn-secondary {
+        background-color: #28a745; /* Green button for "View" */
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        margin-top: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .btn-secondary:hover {
+        background-color: #218838; /* Darker green on hover */
+    }
+
     /* Media queries for responsiveness */
     @@media (max-width: 1000px) {
         .gym-item {
@@ -60,6 +90,9 @@
 
             <!-- Button to switch the photo -->
             <button type="button" class="btn btn-primary" onclick="switchPhoto('@gym.Name', '@gym.PhotosPaths')">Switch Photo</button>
+
+            <!-- View Button using Tag Helpers -->
+            <a asp-controller="GymOwner" asp-action="Details" asp-route-id="@gym.Id" class="btn btn-secondary">View</a>
         </div>
     }
 </div>

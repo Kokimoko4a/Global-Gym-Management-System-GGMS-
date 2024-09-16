@@ -85,8 +85,6 @@
         public class LikeCommentTrainer
         {
             public string CommentId { get; set; }
-
-           
         }
 
         public class AddCommentTrainerFormModel

@@ -249,7 +249,7 @@
              return RedirectToAction("Index", "Home");
          }
 
-        public async Task<IActionResult> GetResponses()
+        public IActionResult GetResponses()
         {
             if (User.Identity.IsAuthenticated)
             {

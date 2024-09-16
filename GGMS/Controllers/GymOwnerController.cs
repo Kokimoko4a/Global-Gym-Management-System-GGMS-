@@ -5,6 +5,7 @@ namespace GGMS.Web.Controllers
     using GGMS.Web.ViewModels.GymOwner;
     using GGMSServices.Data.Interfaces;
     using Microsoft.AspNetCore.Mvc;
+    using PdfSharp.UniversalAccessibility;
     using System.Security.Claims;
     using static GGMS.Common.NotificationMessagesConstants;
 
@@ -85,6 +86,13 @@ namespace GGMS.Web.Controllers
         public IActionResult GetAllGyms() 
         {
             return View(gymOwnerService.GetAllGyms());
+        }
+
+        [HttpGet]
+
+        public async Task<IActionResult> Details(Guid id)
+        {
+            return View(gymOwnerService.GetGymAsBigViewModel(id));
         }
 
     }

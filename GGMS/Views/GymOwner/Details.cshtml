@@ -1,0 +1,168 @@
+﻿@using GGMS.Web.ViewModels.GymOwner;
+@model GymBigViewModel
+
+
+<!-- Add custom styling for gym details and gallery -->
+<style>
+    .gym-details {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .gym-photo-container {
+        position: relative;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+        .gym-photo-container img {
+            width: 500px; /* Size of main focused image */
+            height: 350px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+    .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 24px;
+        color: #333;
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 10px;
+        border-radius: 50%;
+        transition: background-color 0.3s;
+    }
+
+        .arrow:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+    .arrow-left {
+        left: 10px;
+    }
+
+    .arrow-right {
+        right: 10px;
+    }
+
+    .thumbnails-container {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+        .thumbnails-container img {
+            width: 100px; /* Size of thumbnails */
+            height: 75px;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 8px;
+            border: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+            .thumbnails-container img.active {
+                border-color: #007bff; /* Highlight active thumbnail */
+            }
+</style>
+
+<div class="gym-details">
+    <h1>@Model.Title</h1>
+    <p><strong>Address:</strong> @Model.Address</p>
+    <p><strong>Description:</strong> @Model.Description</p>
+</div>
+
+<div class="gym-photo-container">
+    <!-- Left arrow -->
+    <div class="arrow arrow-left" onclick="previousPhoto()">&#10094;</div>
+
+    <!-- Main image -->
+    <img id="main-photo" src="@GetFirstPhoto(Model.PhotoPaths)" alt="Gym Photo" />
+
+    <!-- Right arrow -->
+    <div class="arrow arrow-right" onclick="nextPhoto()">&#10095;</div>
+</div>
+
+<!-- Thumbnails under the main photo -->
+<div class="thumbnails-container" id="thumbnails">
+    @foreach (var photo in GetSanitizedPhotoPaths(Model.PhotoPaths).Split(','))
+    {
+        var photoPath = photo.Trim();
+        <img src="@Url.Content("~/images/" + photoPath)" alt="Gym Thumbnail" onclick="focusPhoto(this)" />
+    }
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const photos = "@Model.PhotoPaths"
+                .split(',')
+                .map(photo => photo.trim())
+                .filter(photo => photo.length > 0);
+
+            let currentIndex = 0;
+
+            function updateMainPhoto() {
+                const mainPhotoElement = document.getElementById('main-photo');
+                const currentPhotoPath = '/images/' + photos[currentIndex];
+                console.log('Updating main photo to:', currentPhotoPath); // Debugging line
+                mainPhotoElement.src = currentPhotoPath;
+                mainPhotoElement.onerror = () => {
+                    console.error('Failed to load image:', currentPhotoPath);
+                    mainPhotoElement.src = '/images/placeholder.jpg'; // Placeholder image
+                };
+
+                // Remove active class from all thumbnails
+                const thumbnails = document.querySelectorAll('.thumbnails-container img');
+                thumbnails.forEach(thumbnail => thumbnail.classList.remove('active'));
+
+                // Add active class to the current thumbnail
+                if (thumbnails[currentIndex]) {
+                    thumbnails[currentIndex].classList.add('active');
+                }
+            }
+
+            window.previousPhoto = function () {
+                currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+                updateMainPhoto();
+            }
+
+            window.nextPhoto = function () {
+                currentIndex = (currentIndex + 1) % photos.length;
+                updateMainPhoto();
+            }
+
+            window.focusPhoto = function (imgElement) {
+                const src = imgElement.src.split('/').pop(); // Get the file name
+                currentIndex = photos.findIndex(photo => photo.includes(src)); // Find the index
+                updateMainPhoto(); // Update the main photo
+            }
+
+            // Initialize the gallery
+            updateMainPhoto();
+            const thumbnails = document.querySelectorAll('.thumbnails-container img');
+            if (thumbnails.length > 0) {
+                thumbnails[0].classList.add('active'); // Highlight the first thumbnail
+            }
+        });
+    </script>
+}
+
+@functions {
+    private string GetFirstPhoto(string photosPaths)
+    {
+        var sanitizedPaths = GetSanitizedPhotoPaths(photosPaths).Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+        return sanitizedPaths.Length > 0 ? Url.Content($"~/images/{sanitizedPaths[0].Trim()}") : string.Empty;
+    }
+
+    private string GetSanitizedPhotoPaths(string photosPaths)
+    {
+        // Remove trailing comma and any extra spaces
+        return photosPaths.Trim().TrimEnd(',').Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+            .Select(photo => photo.Trim())
+            .Aggregate((current, next) => current + "," + next);
+    }
+}

@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GGMS.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+092adaafdc99f428cbfcc4505c3f69807359c0eb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b4e4c7c2f81f97b6f4ce353e04ecaf5bc13bfd91")]
 [assembly: System.Reflection.AssemblyProductAttribute("GGMS.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GGMS.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

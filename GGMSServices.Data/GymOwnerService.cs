@@ -55,7 +55,7 @@
                 if (photo != null && photo.Length > 0)
                 {
 
-                    string fileName = Guid.NewGuid().ToString()  + photo.FileName;
+                    string fileName = Guid.NewGuid().ToString() + photo.FileName;
 
                     var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", fileName);
 
@@ -83,8 +83,25 @@
             {
                 Addrress = x.Address,
                 PhotosPaths = x.PhotosPaths,
-                Name = x.Name
+                Name = x.Name,
+                Id = x.Id
             });
+        }
+
+        public  GymBigViewModel GetGymAsBigViewModel(Guid id)
+        {
+
+            var gym = data.Gyms.Where(x => x.Id == id).Select(x => new GymBigViewModel()
+            {
+                Description = x.Description,
+                Address = x.Address,
+                Id = x.Id,
+                PhotoPaths = x.PhotosPaths,
+                Title = x.Name,
+            }).First();
+
+            return gym;
+
         }
     }
 }

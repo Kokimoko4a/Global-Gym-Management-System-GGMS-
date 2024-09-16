@@ -11,6 +11,8 @@
         public Task CreateGym(GymFormModel formModel, Guid creatorId);
 
         public IEnumerable<GymSmallViewModel> GetAllGyms();
+
+        public GymBigViewModel GetGymAsBigViewModel(Guid id);
             
     }
 }
