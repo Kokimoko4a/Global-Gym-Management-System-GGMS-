@@ -83,9 +83,14 @@ namespace GGMS.Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAllGyms() 
+        public async Task<IActionResult> GetAllGyms([FromQuery] GymQueryModel gymQueryModel) 
         {
-            return View(gymOwnerService.GetAllGyms());
+           
+
+                return View( await gymOwnerService.GetGymsWithQueryModel(gymQueryModel));
+            
+
+         
         }
 
         [HttpGet]

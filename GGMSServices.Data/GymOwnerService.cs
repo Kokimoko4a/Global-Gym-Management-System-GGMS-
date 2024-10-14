@@ -88,7 +88,7 @@
             });
         }
 
-        public  GymBigViewModel GetGymAsBigViewModel(Guid id)
+        public GymBigViewModel GetGymAsBigViewModel(Guid id)
         {
 
             var gym = data.Gyms.Where(x => x.Id == id).Select(x => new GymBigViewModel()
@@ -103,5 +103,49 @@
             return gym;
 
         }
+
+        public async Task<GymQueryModel> GetGymsWithQueryModel(GymQueryModel gymQueryModel)
+        {
+             
+
+
+            int recordsToSkip = Math.Abs((gymQueryModel.CurrentPage - 1) * 6);
+
+            if (!string.IsNullOrEmpty(gymQueryModel.KeyWords))
+            {
+
+                List<Gym> gymsFromDbFiltered = await data.Gyms.
+                    Where(x => x.Description.Contains(gymQueryModel.KeyWords) || x.Name.Contains(gymQueryModel.KeyWords) || x.Address.Contains(gymQueryModel.KeyWords)).Skip(recordsToSkip)
+                    .ToListAsync();
+
+               gymQueryModel.GymSmallViewModels =   gymsFromDbFiltered.Select(x => new GymSmallViewModel()
+                {
+                    Addrress = x.Address,
+                    Name = x.Name,
+                   PhotosPaths = x.PhotosPaths,
+                   Id = x.Id
+               }).ToHashSet();
+
+                return gymQueryModel;
+
+            }
+
+
+            List<Gym> gymsFromDb = await data.Gyms.Skip(recordsToSkip).Take(gymQueryModel.GymsPerPage).ToListAsync();
+
+
+
+            gymQueryModel.GymSmallViewModels =  gymsFromDb.Select(x => new GymSmallViewModel()
+            {
+                Addrress = x.Address,
+                Name = x.Name,
+                PhotosPaths = x.PhotosPaths,
+                Id = x.Id
+            }).ToHashSet();
+
+            return gymQueryModel;
+
+        }
+
     }
 }

@@ -13,6 +13,9 @@
         public IEnumerable<GymSmallViewModel> GetAllGyms();
 
         public GymBigViewModel GetGymAsBigViewModel(Guid id);
-            
+
+        public Task<GymQueryModel> GetGymsWithQueryModel(GymQueryModel gymQueryModel);
+
+
     }
 }

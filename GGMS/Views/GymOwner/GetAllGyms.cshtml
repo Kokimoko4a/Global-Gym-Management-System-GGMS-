@@ -1,19 +1,19 @@
 ﻿@using GGMS.Web.ViewModels.GymOwner;
-@model IEnumerable<GymSmallViewModel>
+@model GymQueryModel
 
 <!-- Add custom styling for gym items and layout -->
 <style>
     .gym-container {
         display: flex;
         flex-wrap: wrap;
-        gap: 20px; /* Space between gym items */
-        justify-content: space-between; /* Spread items evenly across the row */
+        gap: 20px;
+        justify-content: space-between;
     }
 
     .gym-item {
-        flex: 1 1 calc(33.33% - 20px); /* Ensure three items per row */
-        max-width: calc(33.33% - 20px); /* Max width for each gym item */
-        box-sizing: border-box; /* Ensures padding and border are included in the width */
+        flex: 1 1 calc(33.33% - 20px);
+        max-width: calc(33.33% - 20px);
+        box-sizing: border-box;
         border: 1px solid #ccc;
         padding: 10px;
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
@@ -22,15 +22,14 @@
     }
 
     .gym-photo-container img {
-        width: 250px;  /* Larger image size */
+        width: 250px;
         height: 200px;
-        object-fit: cover; /* Ensures image fits within the square */
+        object-fit: cover;
         border-radius: 8px;
     }
 
-    /* Button Styles */
     .btn-primary {
-        background-color: #007bff; /* Primary blue */
+        background-color: #007bff;
         border: none;
         color: white;
         padding: 10px 20px;
@@ -40,11 +39,11 @@
     }
 
     .btn-primary:hover {
-        background-color: #0056b3; /* Darker blue on hover */
+        background-color: #0056b3;
     }
 
     .btn-secondary {
-        background-color: #28a745; /* Green button for "View" */
+        background-color: #28a745;
         border: none;
         color: white;
         padding: 10px 20px;
@@ -55,20 +54,55 @@
     }
 
     .btn-secondary:hover {
-        background-color: #218838; /* Darker green on hover */
+        background-color: #218838;
     }
 
-    /* Media queries for responsiveness */
+    .pagination {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .pagination a {
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .pagination a.active {
+        background-color: #0056b3;
+    }
+
+    .pagination a.disabled {
+        pointer-events: none;
+        background-color: #ccc;
+    }
+
+    .search-bar {
+        margin-bottom: 20px;
+    }
+
+    .search-bar input {
+        padding: 10px;
+        width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-right: 10px;
+    }
+
     @@media (max-width: 1000px) {
         .gym-item {
-            flex: 1 1 calc(50% - 20px); /* Two items per row for smaller screens */
+            flex: 1 1 calc(50% - 20px);
             max-width: calc(50% - 20px);
         }
     }
 
     @@media (max-width: 600px) {
         .gym-item {
-            flex: 1 1 100%; /* One item per row for small screens */
+            flex: 1 1 100%;
             max-width: 100%;
         }
     }
@@ -76,8 +110,17 @@
 
 <h2>List of Gyms</h2>
 
+<!-- Search Form -->
+<div class="search-bar">
+    <form method="get" asp-controller="GymOwner" asp-action="GetAllGyms">
+        <input type="text" name="KeyWords" value="@Model.KeyWords" placeholder="Search gyms..." />
+        <input type="hidden" name="CurrentPage" value="1" />
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+</div>
+
 <div class="gym-container">
-    @foreach (var gym in Model)
+    @foreach (var gym in Model.GymSmallViewModels)
     {
         <div class="gym-item">
             <h3>@gym.Name</h3>
@@ -97,25 +140,52 @@
     }
 </div>
 
+<!-- Pagination Section -->
+<div class="pagination">
+    <!-- Previous Button -->
+    <a class="@(Model.CurrentPage == 1 ? "disabled" : string.Empty)"
+       asp-controller="GymOwner"
+       asp-action="GetAllGyms"
+       asp-route-CurrentPage="@(Model.CurrentPage - 1)"
+       asp-route-SearchTerm="@Model.KeyWords">
+        Previous
+    </a>
+
+    <!-- Page Numbers -->
+    @for (var i = 1; i <= Math.Ceiling((double)Model.TotalGyms / Model.GymsPerPage); i++)
+    {
+        <a class="@(Model.CurrentPage == i ? "active" : string.Empty)"
+           asp-controller="GymOwner"
+           asp-action="GetAllGyms"
+           asp-route-CurrentPage="@i"
+           asp-route-SearchTerm="@Model.KeyWords">
+            @i
+        </a>
+    }
+
+    <!-- Next Button -->
+    <a class="@(Model.CurrentPage == Math.Ceiling((double)Model.TotalGyms / Model.GymsPerPage) ? "disabled" : string.Empty)"
+       asp-controller="GymOwner"
+       asp-action="GetAllGyms"
+       asp-route-CurrentPage="@(Model.CurrentPage + 1)"
+       asp-route-SearchTerm="@Model.KeyWords">
+        Next
+    </a>
+</div>
+
+@if (!Model.GymSmallViewModels.Any())
+{
+    <h2>No gyms found with the current filter.</h2>
+}
+
 @section Scripts {
     <script>
         function switchPhoto(gymName, photosPaths) {
-            // Split the photo paths string into an array
             let photos = photosPaths.split(',').map(photo => photo.trim()).filter(photo => photo.length > 0);
-
-            // Get the current photo element by gym name
             let photoElement = document.getElementById('photo-' + gymName);
-
-            // Get the current photo's source
             let currentPhotoSrc = photoElement.src;
-
-            // Find the index of the current photo in the array
             let currentIndex = photos.findIndex(photo => currentPhotoSrc.includes(photo));
-
-            // Determine the next photo index (loop back if at the last photo)
             let nextIndex = (currentIndex + 1) % photos.length;
-
-            // Update the image source to the next photo with hardcoded /images/ directory
             photoElement.src = '/images/' + photos[nextIndex];
         }
     </script>
