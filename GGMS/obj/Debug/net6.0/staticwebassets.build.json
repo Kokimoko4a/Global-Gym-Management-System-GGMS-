@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ZmUakDAKs010te4ySbem5RYcPBZDl0Oyn4wPGXHVkVg=",
+  "Hash": "Z8jA8xSFHzQOee4menraXipZ8V7p/uoaox0lBaQNaXg=",
   "Source": "GGMS.Web",
   "BasePath": "_content/GGMS.Web",
   "Mode": "Default",
@@ -1288,6 +1288,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\213c6ee8-b7fa-4e08-8166-39a42e72d96egym1.jfif"
+    },
+    {
+      "Identity": "D:\\Kaloyan\\GGMS\\Global-Gym-Management-System-GGMS-\\GGMS\\wwwroot\\images\\330eff3e-11bc-489b-985e-5db43960b010_viber_изображение_2022-09-13_14-57-54-129.jpg",
+      "SourceId": "GGMS.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Kaloyan\\GGMS\\Global-Gym-Management-System-GGMS-\\GGMS\\wwwroot\\",
+      "BasePath": "_content/GGMS.Web",
+      "RelativePath": "images/330eff3e-11bc-489b-985e-5db43960b010_viber_изображение_2022-09-13_14-57-54-129.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\330eff3e-11bc-489b-985e-5db43960b010_viber_изображение_2022-09-13_14-57-54-129.jpg"
     },
     {
       "Identity": "D:\\Kaloyan\\GGMS\\Global-Gym-Management-System-GGMS-\\GGMS\\wwwroot\\images\\3bbc8f8e-2f10-4cdc-9683-70118f3850cbgym2.jfif",

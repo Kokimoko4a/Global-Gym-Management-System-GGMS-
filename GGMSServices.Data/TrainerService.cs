@@ -3,6 +3,7 @@
     using GGMS.Data;
     using GGMS.Data.Models;
     using GGMS.Web.ViewModels.FitnessProgram;
+    using GGMS.Web.ViewModels.GymOwner;
     using GGMS.Web.ViewModels.RequestToTrainer;
     using GGMS.Web.ViewModels.Trainer;
     using GGMSServices.Data.Interfaces;
@@ -140,27 +141,45 @@
 
  
 
-        public AllTrainers GetAllTrainers()
+        public async Task<TrainerQueryModel> GetAllTrainersAsQueryModel( TrainerQueryModel queryModel)
         {
-            AllTrainers allTrainers = new AllTrainers();
+            int recordsToSkip = Math.Abs((queryModel.CurrentPage - 1) * 6);
 
-            allTrainers.Trainers = data.Trainers.Select(t => new TrainerSmallViewModel()
+            
+
+
+            if (!string.IsNullOrWhiteSpace(queryModel.KeyWords))
             {
-                Id = t.Id,
-            }).ToHashSet();
 
-            foreach (var trainer in allTrainers.Trainers)
-            {
-                trainer.FirstName = data.Users.First(x => x.Id == trainer.Id).FirstName;
-                trainer.LastName = data.Users.First(x => x.Id == trainer.Id).LastName;
-                trainer.PathToImage = data.Users.First(x => x.Id == trainer.Id).PathToImage;
+                List<ApplicationUser> usersFromDbFiltered = await data.Users.
+                    Where(x => x.FirstName.Contains(queryModel.KeyWords) || x.Address.Contains(queryModel.KeyWords) || x.LastName.Contains(queryModel.KeyWords)).Skip(recordsToSkip)
+                    .ToListAsync();
 
-        
-        
+                queryModel.TrainerSmallViewModels = usersFromDbFiltered.Select(x => new TrainerSmallViewModel()
+                {
+                    FirstName = x.FirstName,
+                    LastName = x.LastName,
+                    Id = x.Id,
+                    PathToImage = x.PathToImage
+                }).ToHashSet();
+
+                return queryModel;
+
             }
 
+            List<ApplicationUser> usersFromDb = await data.Users.Skip(recordsToSkip).Take(queryModel.TrainersPerPage).ToListAsync();
 
-            return allTrainers;
+
+
+            queryModel.TrainerSmallViewModels = usersFromDb.Select(x => new TrainerSmallViewModel()
+            {
+                FirstName = x.FirstName,
+                LastName = x.LastName,
+                Id = x.Id,
+                PathToImage = x.PathToImage
+            }).ToHashSet();
+
+            return queryModel;
         }
 
         public async Task<FitnessProgramFormModel> GetProgramAsFormModel(Guid id)

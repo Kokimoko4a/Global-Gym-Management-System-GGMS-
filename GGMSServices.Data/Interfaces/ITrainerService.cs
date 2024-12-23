@@ -23,7 +23,7 @@
 
         public Task<FitnessProgramFormModel> GetProgramAsFormModel(Guid id);
 
-        public AllTrainers GetAllTrainers();
+        public Task<TrainerQueryModel> GetAllTrainersAsQueryModel(TrainerQueryModel queryModel);
 
         public Task<TrainerBigViewModel> GetTrainer(Guid id);
 
@@ -42,5 +42,7 @@
         public Task<Trainer> GetTrainerBaseModel(Guid id);
 
         public Task<ApplicationUser> GetTrainerParalelUserRecord(Guid id);//gets user by trainer id ;)
+
+
     }
 }

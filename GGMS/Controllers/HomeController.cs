@@ -27,11 +27,9 @@ namespace GGMS.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetTrainers() 
+        public async  Task<IActionResult> GetTrainers([FromQuery]  TrainerQueryModel queryModel) 
         {
-            AllTrainers allTrainers = trainerService.GetAllTrainers();
-
-            return View(allTrainers);
+            return View(await trainerService.GetAllTrainersAsQueryModel(queryModel));
         }
 
         public IActionResult Privacy()

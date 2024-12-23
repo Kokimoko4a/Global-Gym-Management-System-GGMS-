@@ -96,6 +96,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\213c6ee8-b7fa-4e08-8166-39a42e72d96egym1.jfif))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\330eff3e-11bc-489b-985e-5db43960b010_viber_изображение_2022-09-13_14-57-54-129.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>GGMS.Web</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/GGMS.Web</BasePath>
+      <RelativePath>images/330eff3e-11bc-489b-985e-5db43960b010_viber_изображение_2022-09-13_14-57-54-129.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\330eff3e-11bc-489b-985e-5db43960b010_viber_изображение_2022-09-13_14-57-54-129.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\3bbc8f8e-2f10-4cdc-9683-70118f3850cbgym2.jfif))">
       <SourceType>Package</SourceType>
       <SourceId>GGMS.Web</SourceId>

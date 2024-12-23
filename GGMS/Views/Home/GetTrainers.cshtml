@@ -1,98 +1,173 @@
 ﻿@using GGMS.Web.ViewModels.Trainer
-@model AllTrainers
+@model TrainerQueryModel
+<!-- Add custom styling for trainer items and layout -->
+<!-- Add custom styling for trainer items and layout -->
+<style>
+    .trainer-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+    }
 
-@{
-    ViewData["Title"] = "Trainers List";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+    .trainer-item {
+        flex: 1 1 calc(33.33% - 20px);
+        max-width: calc(33.33% - 20px);
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        padding: 10px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        text-align: center;
+    }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>User List - GGMS</title>
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/GGMS.styles.css" asp-append-version="true" />
-    <style>
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            padding: 20px;
+    .trainer-photo-container img {
+        width: 250px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
         }
 
-        .user-card {
-            background-color: #333;
+    .pagination {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+        .pagination a {
+            padding: 10px 15px;
+            background-color: #007bff;
             color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            width: 200px;
-            height: 300px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            text-decoration: none;
+            border-radius: 5px;
         }
 
-            .user-card h2 {
-                font-size: 1.5em;
-                margin: 0;
+            .pagination a.active {
+                background-color: #0056b3;
             }
 
-        .profile-image {
+            .pagination a.disabled {
+                pointer-events: none;
+                background-color: #ccc;
+            }
+
+    .search-bar {
+        margin-bottom: 20px;
+    }
+
+        .search-bar input {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+    @@media (max-width: 1000px) {
+        .trainer-item {
+            flex: 1 1 calc(50% - 20px);
+            max-width: calc(50% - 20px);
+        }
+    }
+
+    @@media (max-width: 600px) {
+        .trainer-item {
+            flex: 1 1 100%;
             max-width: 100%;
-            max-height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
         }
+    }
+</style>
 
-        .button-group {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 10px;
-        }
+<h2>List of Trainers</h2>
 
-            .button-group button {
-                background-color: #444;
-                color: white;
-                border: none;
-                padding: 10px 15px;
-                border-radius: 5px;
-                cursor: pointer;
-                text-transform: uppercase;
-                font-size: 0.8em;
-            }
+<!-- Search Form -->
+<div class="search-bar">
+    <form method="get" asp-controller="Home" asp-action="GetTrainers">
+        <input type="text" name="KeyWords" value="@Model.KeyWords" placeholder="Search trainers..." />
+        <input type="hidden" name="CurrentPage" value="1" />
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+</div>
 
-                .button-group button:hover {
-                    background-color: #555;
-                }
-    </style>
-</head>
-<body>
-    <div class="container">
-   
-        <div class="card-container">
-            @foreach (var user in Model.Trainers)
-            {
-                <div class="user-card">
-                    <h2>@user.FirstName @user.LastName</h2>
-                    @if (!string.IsNullOrEmpty(user.PathToImage))
-                    {
-                        <img src="~/images/@user.PathToImage" alt="Profile Image" class="profile-image" />
-                    }
+<div class="trainer-container">
+    @foreach (var trainer in Model.TrainerSmallViewModels)
+    {
+        <div class="trainer-item">
+            <h3>@trainer.FirstName @trainer.LastName</h3>
 
-                    <div class="button-group">
-                        <form asp-controller="Trainer" asp-action="GetInfo" asp-route-id="@user.Id" method="get">
-                            <input type="hidden" name="id" value="@user.Id" />
-                            <button type="submit">More info</button>
-                        </form>
-                    </div>
-                </div>
-            }
+            <!-- Image container with path prepended by /images/ directory -->
+            <div class="trainer-photo-container">
+                <img src="/images/@trainer.PathToImage" alt="Trainer Photo" />
+            </div>
+
+            <!-- View Button using Tag Helpers -->
+            <a asp-controller="Trainer" asp-action="GetInfo" asp-route-id="@trainer.Id" class="btn btn-primary">View</a>
         </div>
-    </div>
-</body>
-</html>
+    }
+</div>
+
+<!-- Pagination Section -->
+<div class="pagination">
+    @* Previous Button *@
+    <a class="@(Model.CurrentPage == 1 ? "disabled" : string.Empty)"
+       asp-controller="Home"
+       asp-action="GetTrainers"
+       asp-route-CurrentPage="@(Model.CurrentPage - 1)"
+       asp-route-KeyWords="@Model.KeyWords">
+        Previous
+    </a>
+
+    @* Logic for displaying a limited number of pages *@
+    @{
+        var totalPages = (int)Math.Ceiling((double)Model.TotalTrainers / Model.TrainersPerPage);
+        var maxPagesToShow = 5;
+        var startPage = Math.Max(1, Model.CurrentPage - (maxPagesToShow / 2));
+        var endPage = Math.Min(totalPages, startPage + maxPagesToShow - 1);
+
+        if (endPage - startPage + 1 < maxPagesToShow)
+        {
+            startPage = Math.Max(1, endPage - maxPagesToShow + 1);
+        }
+    }
+
+    @* Page Numbers *@
+    @for (var i = startPage; i <= endPage; i++)
+    {
+        <a class="@(Model.CurrentPage == i ? "active" : string.Empty)"
+           asp-controller="Home"
+           asp-action="GetTrainers"
+           asp-route-CurrentPage="@i"
+           asp-route-KeyWords="@Model.KeyWords">
+            @i
+        </a>
+    }
+
+    @* Next Button *@
+    <a class="@(Model.CurrentPage == totalPages ? "disabled" : string.Empty)"
+       asp-controller="Home"
+       asp-action="GetTrainers"
+       asp-route-CurrentPage="@(Model.CurrentPage + 1)"
+       asp-route-KeyWords="@Model.KeyWords">
+        Next
+    </a>
+</div>
+
+@if (!Model.TrainerSmallViewModels.Any())
+{
+    <h2>No trainers found with the current filter.</h2>
+}
