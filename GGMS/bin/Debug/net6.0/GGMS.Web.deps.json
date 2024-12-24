@@ -19,7 +19,10 @@
           "Microsoft.AspNetCore.Identity.UI": "6.0.26",
           "Microsoft.AspNetCore.SignalR": "1.1.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.26",
-          "Microsoft.EntityFrameworkCore.Tools": "6.0.26"
+          "Microsoft.EntityFrameworkCore.Tools": "6.0.26",
+          "PDFsharp": "6.1.1",
+          "Select.HtmlToPdf.NetCore": "24.1.0",
+          "ZXing.Net": "0.16.9"
         },
         "runtime": {
           "GGMS.Web.dll": {}
@@ -928,7 +931,20 @@
           }
         }
       },
+      "ZXing.Net/0.16.9": {
+        "runtime": {
+          "lib/net6.0/zxing.dll": {
+            "assemblyVersion": "0.16.9.0",
+            "fileVersion": "0.16.9.0"
+          }
+        }
+      },
       "GGMS.Common/1.0.0": {
+        "dependencies": {
+          "PDFsharp": "6.1.1",
+          "Select.HtmlToPdf.NetCore": "24.1.0",
+          "ZXing.Net": "0.16.9"
+        },
         "runtime": {
           "GGMS.Common.dll": {}
         }
@@ -937,7 +953,10 @@
         "dependencies": {
           "GGMS.Data.Models": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.26",
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.26"
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.26",
+          "PDFsharp": "6.1.1",
+          "Select.HtmlToPdf.NetCore": "24.1.0",
+          "ZXing.Net": "0.16.9"
         },
         "runtime": {
           "GGMS.Data.dll": {}
@@ -946,7 +965,10 @@
       "GGMS.Data.Models/1.0.0": {
         "dependencies": {
           "GGMS.Common": "1.0.0",
-          "Microsoft.Extensions.Identity.Stores": "6.0.26"
+          "Microsoft.Extensions.Identity.Stores": "6.0.26",
+          "PDFsharp": "6.1.1",
+          "Select.HtmlToPdf.NetCore": "24.1.0",
+          "ZXing.Net": "0.16.9"
         },
         "runtime": {
           "GGMS.Data.Models.dll": {}
@@ -955,7 +977,10 @@
       "GGMS.Web.Infrastructure/1.0.0": {
         "dependencies": {
           "GGMSServices.Data": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
+          "PDFsharp": "6.1.1",
+          "Select.HtmlToPdf.NetCore": "24.1.0",
+          "ZXing.Net": "0.16.9"
         },
         "runtime": {
           "GGMS.Web.Infrastructure.dll": {}
@@ -967,7 +992,8 @@
           "Microsoft.AspNetCore.SignalR.Core": "1.1.0",
           "PDFsharp": "6.1.1",
           "Select.HtmlToPdf.NetCore": "24.1.0",
-          "SendGrid": "9.29.3"
+          "SendGrid": "9.29.3",
+          "ZXing.Net": "0.16.9"
         },
         "runtime": {
           "GGMS.Web.SpecialModels.dll": {}
@@ -977,7 +1003,10 @@
         "dependencies": {
           "GGMS.Common": "1.0.0",
           "GGMS.Data.Models": "1.0.0",
-          "Microsoft.AspNetCore.Http.Features": "2.2.0"
+          "Microsoft.AspNetCore.Http.Features": "2.2.0",
+          "PDFsharp": "6.1.1",
+          "Select.HtmlToPdf.NetCore": "24.1.0",
+          "ZXing.Net": "0.16.9"
         },
         "runtime": {
           "GGMS.Web.ViewModels.dll": {}
@@ -987,7 +1016,10 @@
         "dependencies": {
           "GGMS.Data": "1.0.0",
           "GGMS.Data.Models": "1.0.0",
-          "GGMS.Web.ViewModels": "1.0.0"
+          "GGMS.Web.ViewModels": "1.0.0",
+          "PDFsharp": "6.1.1",
+          "Select.HtmlToPdf.NetCore": "24.1.0",
+          "ZXing.Net": "0.16.9"
         },
         "runtime": {
           "GGMSServices.Data.dll": {}
@@ -1728,6 +1760,13 @@
       "sha512": "sha512-CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
+    },
+    "ZXing.Net/0.16.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7WaVMHklpT3Ye2ragqRIwlFRsb6kOk63BOGADV0fan3ulVfGLUYkDi5yNUsZS/7FVNkWbtHAlDLmu4WnHGfqvQ==",
+      "path": "zxing.net/0.16.9",
+      "hashPath": "zxing.net.0.16.9.nupkg.sha512"
     },
     "GGMS.Common/1.0.0": {
       "type": "project",

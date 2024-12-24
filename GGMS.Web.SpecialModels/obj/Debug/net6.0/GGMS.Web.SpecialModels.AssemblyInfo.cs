@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GGMS.Web.SpecialModels")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+da636aafabaef38a57d54cf71a523f91fe59e57b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7ffd1262a76ecc63dd4d4245ed4098d85dfbbbde")]
 [assembly: System.Reflection.AssemblyProductAttribute("GGMS.Web.SpecialModels")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GGMS.Web.SpecialModels")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

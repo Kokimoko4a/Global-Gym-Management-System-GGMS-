@@ -16,6 +16,8 @@
 
         public Task<GymQueryModel> GetGymsWithQueryModel(GymQueryModel gymQueryModel);
 
+        public Task<string[]> CreateGymCard(Guid userId, Guid gymId);
+
 
     }
 }

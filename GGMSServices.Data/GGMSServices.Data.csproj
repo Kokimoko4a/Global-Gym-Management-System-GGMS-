@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="PDFsharp" Version="6.1.1" />
+    <PackageReference Include="Select.HtmlToPdf.NetCore" Version="24.1.0" />
+    <PackageReference Include="ZXing.Net" Version="0.16.9" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\GGMS.Data.Models\GGMS.Data.Models.csproj" />
     <ProjectReference Include="..\GGMS.Data\GGMS.Data.csproj" />
     <ProjectReference Include="..\GGMS.Web.ViewModels\GGMS.Web.ViewModels.csproj" />

@@ -75,6 +75,12 @@
     <p><strong>Description:</strong> @Model.Description</p>
 </div>
 
+<div class="text-center">
+    <form asp-action="BuyCard" asp-controller="GymOwner" asp-route-id="@Model.Id" method="post">
+        <button type="submit" class="btn btn-primary">Buy Card</button>
+    </form>
+</div>
+
 <div class="gym-photo-container">
     <!-- Left arrow -->
     <div class="arrow arrow-left" onclick="previousPhoto()">&#10094;</div>

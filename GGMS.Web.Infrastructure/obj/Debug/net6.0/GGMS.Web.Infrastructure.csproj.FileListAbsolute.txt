@@ -22,3 +22,4 @@ D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Web.Infrastructure\bin\D
 D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Web.Infrastructure\bin\Debug\net6.0\GGMS.Data.Models.pdb
 D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Web.Infrastructure\bin\Debug\net6.0\GGMS.Web.ViewModels.pdb
 D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Web.Infrastructure\obj\Debug\net6.0\GGMS.Web.29CB0F8E.Up2Date
+D:\Kaloyan\GGMS\Global-Gym-Management-System-GGMS-\GGMS.Web.Infrastructure\bin\Debug\net6.0\Select.Html.dep

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/l81/Fhwz+M+oQX8KLGcX4OPq/EtLBF4l2ECWQCqzx6b9M01mUtlEDcc739B8GIOYMWDc9a7pAbC9L5HnQhKgg==",
+  "dgSpecHash": "TArKBBew0SaBwqoSjwY7rfQGb2/oneKb6kbRUwzjfnIR2KGpX8AHanHPi9J6yRQymdjEb21IvTULDGo+TCr7Qw==",
   "success": true,
   "projectFilePath": "D:\\Kaloyan\\GGMS\\Global-Gym-Management-System-GGMS-\\GGMS.Web.SpecialModels\\GGMS.Web.SpecialModels.csproj",
   "expectedPackageFiles": [
@@ -47,7 +47,8 @@
     "C:\\Users\\Admin\\.nuget\\packages\\system.text.encoding.codepages\\4.5.1\\system.text.encoding.codepages.4.5.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.threading.channels\\4.5.0\\system.threading.channels.4.5.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.2\\system.threading.tasks.extensions.4.5.2.nupkg.sha512"
+    "C:\\Users\\Admin\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.2\\system.threading.tasks.extensions.4.5.2.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\zxing.net\\0.16.9\\zxing.net.0.16.9.nupkg.sha512"
   ],
   "logs": []
 }

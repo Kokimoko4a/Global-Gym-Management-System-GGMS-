@@ -106,7 +106,7 @@
 
         public async Task<GymQueryModel> GetGymsWithQueryModel(GymQueryModel gymQueryModel)
         {
-             
+
 
 
             int recordsToSkip = Math.Abs((gymQueryModel.CurrentPage - 1) * 6);
@@ -118,13 +118,13 @@
                     Where(x => x.Description.Contains(gymQueryModel.KeyWords) || x.Name.Contains(gymQueryModel.KeyWords) || x.Address.Contains(gymQueryModel.KeyWords)).Skip(recordsToSkip)
                     .ToListAsync();
 
-               gymQueryModel.GymSmallViewModels =   gymsFromDbFiltered.Select(x => new GymSmallViewModel()
+                gymQueryModel.GymSmallViewModels = gymsFromDbFiltered.Select(x => new GymSmallViewModel()
                 {
                     Addrress = x.Address,
                     Name = x.Name,
-                   PhotosPaths = x.PhotosPaths,
-                   Id = x.Id
-               }).ToHashSet();
+                    PhotosPaths = x.PhotosPaths,
+                    Id = x.Id
+                }).ToHashSet();
 
                 return gymQueryModel;
 
@@ -135,7 +135,7 @@
 
 
 
-            gymQueryModel.GymSmallViewModels =  gymsFromDb.Select(x => new GymSmallViewModel()
+            gymQueryModel.GymSmallViewModels = gymsFromDb.Select(x => new GymSmallViewModel()
             {
                 Addrress = x.Address,
                 Name = x.Name,
@@ -147,5 +147,36 @@
 
         }
 
+        public async Task<string[]> CreateGymCard(Guid userId, Guid gymId)
+        {
+            string[] output = new string[5];
+
+            ApplicationUser applicationUser = await data.Users.FirstOrDefaultAsync(x => x.Id == userId)!;
+
+            Gym gym = await data.Gyms.FirstOrDefaultAsync(x => x.Id == gymId)!;
+
+            FitnessCard fitnessCard = new FitnessCard();
+
+            fitnessCard.UserId = userId;
+            fitnessCard.User = applicationUser;
+            fitnessCard.Gym = gym;
+            fitnessCard.GymId = gymId;
+            fitnessCard.ExpiringDate = DateTime.UtcNow.AddDays(30);
+
+           await data.AddAsync(fitnessCard);
+            await data.SaveChangesAsync();
+
+            gym.FitnessCards.Add(fitnessCard);
+            await data.SaveChangesAsync();
+
+            output[0] = applicationUser!.FirstName;
+            output[1] = applicationUser.LastName;
+            output[2] = gym.Name;
+            output[3] = fitnessCard.IssueDate.ToString();
+            output[4] = fitnessCard.ExpiringDate.ToString();
+
+
+            return output;
+        }
     }
 }
