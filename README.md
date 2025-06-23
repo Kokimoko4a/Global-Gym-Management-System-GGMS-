@@ -66,13 +66,4 @@ Contributions are welcome! Please fork the repository, create a new branch, and 
 
 License
 This project is licensed under the MIT License.
-
-yaml
-Copy
-Edit
-
----
-
-If you need further assistance with setting up the project or have additional questions, feel free to ask!:contentReference[oaicite:81]{index=81}
-::contentReference[oaicite:82]{index=82}
  
